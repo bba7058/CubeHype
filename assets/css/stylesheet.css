@@ -1,0 +1,138 @@
+
+body{
+    background-color: #fff;
+    font-family: 'Prompt', sans-serif;
+}
+
+
+a{
+    color: #fff;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ================================ NAVBAR  =============================================== */
+
+.custom-navbar{
+    background-color: #fff;
+    box-shadow: 0px 3px 8px #d2f1ff;
+}
+
+.img-brand{
+    width: 90px;
+}
+
+.nav-link.active{
+    color: #26CBFF !important;
+}
+
+.menu-desktop{
+    display: block;
+}
+
+.menu-mobile.collapse:not(.show){
+    display: none !important;
+}
+
+.menu-desktop .nav-item:hover .nav-link,
+.menu-mobile .nav-item:hover .nav-link,
+.menu-mobile .sub-menu-list:hover{
+    color: #26CBFF !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: unset;
+}
+
+.dropdown-wrapper{
+    font-weight: 500;
+    color: #5e5e5e !important;
+}
+
+.dropdown-hover{
+    display: none;
+    top: 35px;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 2px 6px 0px #d0d0d0;
+    z-index: 1;
+    border: none;
+}
+
+.dropdown:hover .dropdown-hover{
+    display: block;
+}
+
+.dropdown-list{
+    color: #3b3b3b !important;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-list:hover{
+    color: #26cbff !important;
+    background-color: #f4f4f4;
+}
+
+.search-icon{
+    background-color: unset;
+    border: none;
+
+}
+
+.search-icon:hover i{
+    color: rgba(0, 0, 0, .7);
+}
+
+.search-icon i{
+    color: rgba(0, 0, 0, .5);
+    font-size: 20px;
+}
+
+.collapse-sub-memu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    min-height: 45px;
+    color: #5e5e5e !important;
+}
+
+.menu-mobile .sub-menu-list{
+    font-weight: 500;
+    min-height: 35px;
+    color: #5e5e5e !important;
+    display: flex;
+    align-items: center;
+}
+
+
+/* ================================ END NAVBAR  =============================================== */
+
+
+/* ================================ TOP SECTION  =============================================== */
+
+
+
+@media screen and (max-width: 992px){
+
+    .navbar-light .navbar-nav .nav-item:not(:last-child){
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu-desktop{
+        display: none;
+    }
+    
+
+}
