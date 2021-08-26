@@ -125,11 +125,14 @@ a:hover{
 
 .section-trending{
     width: 100%;
-    height: 450px;
+    height: 500px;
+    padding-bottom: 50px;
 }
 
-.section-trending .col-padding{
+.section-trending .trending-left,
+.section-trending .trending-right{
     padding: 0px 2px;
+    height: 100%;
 }
 
 .section-trending .sm-box{
@@ -227,6 +230,104 @@ a:hover{
 }
 
 
+/* ================================ END TOP SECTION  =============================================== */
+
+
+/* ================================ SECTION LIFESTYLE =============================================== */
+
+
+.section-lifestyle .header-category{
+    border-bottom: 2px solid #26CBFF;
+    margin-bottom: 15px;
+}
+
+.category-title{
+    display: inline-block;
+    padding: 3px 15px;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.category-title.life{
+    background-color:#26CBFF;
+}
+
+.section-lifestyle .first-item .img-lifestyle{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.section-lifestyle .first-item .card-title{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.section-lifestyle .first-item .card-text{
+    color: #565656;
+    font-size: 14px;
+}
+
+.info-post{
+    display: flex;
+}
+
+.info-post .post-author,
+.info-post .post-date,
+.info-post span{
+    display: flex;
+    align-items: center;
+    color: #9E9E9E;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.card-link-img{
+    -webkit-transition : -webkit-filter .4s ease-out
+}
+
+.card-link-img:hover{
+    filter: brightness(0.6);
+}
+
+
+.card-link:visited{
+    color: #000;
+}
+
+.card-link .card-title{
+    transition: all .2s ease-out;
+}
+
+.card-link:hover .card-title{
+    color: #26CBFF;
+}
+
+.section-lifestyle .card-items{
+    border: none;
+}
+
+.section-lifestyle .card-items:not(:first-child){
+    border-top: 1px solid #D9D9D9;
+    padding-top: 15px;
+}
+
+.section-lifestyle .card-items .card-title{
+    font-size: 15px;
+}
+
+.section-lifestyle .img-life{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+
+
+/* ================================ END SECTION LIFESTYLE  =============================================== */
 
 
 
@@ -243,7 +344,7 @@ a:hover{
 
 
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 991.98px){
 
     .navbar-light .navbar-nav .nav-item:not(:last-child){
         border-bottom: 1px solid #ccc;
@@ -253,8 +354,27 @@ a:hover{
         display: none;
     }
 
-    .section-trending .col-padding {
+    .section-trending .trending-left,
+    .section-trending .trending-right {
         padding: 0px 2px 2px 0px;
+        height: 50%;
+    }
+
+    .section-trending{
+        height: 950px;
+    }
+    
+
+}
+
+@media screen and (max-width: 767.98px){
+
+    .section-lifestyle .first-item .img-lifestyle {
+        height: 50vw;
+    }
+
+    .section-lifestyle .img-life {
+        height: 20vw;
     }
     
 
