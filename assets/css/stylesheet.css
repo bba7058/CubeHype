@@ -181,6 +181,8 @@ a:hover{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .section-trending .trending-header{
@@ -242,7 +244,9 @@ a:hover{
 /* ================================ SECTION LIFESTYLE =============================================== */
 
 .section-lifestyle,
-.section-tech{
+.section-tech,
+.section-ent,
+.section-ww{
     margin-bottom: 50px;
 }
 
@@ -369,8 +373,182 @@ a:hover{
 }
 
 
-
 /* ================================ END SECTION TECH  =============================================== */
+
+
+/* ================================ SECTION ENTERTAINMENT  =============================================== */
+
+.section-ent .header-category {
+    border-bottom: 2px solid #B632EE;
+    margin-bottom: 15px;
+}
+
+.category-title.ent{
+    background-color: #B632EE;
+}
+
+.section-ent .ent-wrapper{
+    height: 250px;
+    padding: 0px 1px 2px 1px ;
+}
+
+.section-ent .ent-list{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.section-ent .ent-list:visited{
+    color: #000;
+}
+
+.section-ent .ent-list:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+.section-ent .img-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all .4s ease-out;
+}
+
+.section-ent .ent-list:hover .img-cover{
+    transform: scale(1.2);
+}
+
+.section-ent .text-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+}
+
+.section-ent .ent-info{
+    color: #fff;
+    font-weight: 500;
+}
+
+.section-ent .text-wrapper .ent-date{
+    font-weight: 600;
+    color: #E40707;
+}
+
+.section-ent .ent-info .cate,
+.section-ent .ent-info .tag{
+    color: #F9EC2D;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.section-ent .ent-title{
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 0;
+    transition: all .2s ease-out;
+       text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.section-ent .ent-title:hover{
+    color: #F9EC2D;
+}
+
+
+
+/* ================================ END SECTION ENTERTAINMENT  =============================================== */
+
+
+/* ================================ SECTION WORLDWIDE  =============================================== */
+
+.section-ww .header-category {
+    border-bottom: 2px solid #34E658;
+    margin-bottom: 15px;
+}
+
+.category-title.ww{
+    background-color: #34E658;
+}
+
+.section-ww .ww-link-img {
+    height: 200px;
+}
+
+.section-ww .ww-wrapper .img-ww{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease-out;
+}
+
+.section-ww .ww-link-img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    mix-blend-mode: color;
+    opacity: 0;
+    transition: opacity .4s ease-out;
+    background-color: rgb(83, 238, 122, .4);
+}
+
+.section-ww .ww-link-img:hover:after{
+   opacity: 1;
+}
+
+
+.section-ww .ww-wrapper .ww-body{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section-ww .ww-wrapper .ww-body .ww-title-link:visited{
+    color: #000;
+}
+
+.section-ww .ww-wrapper .ww-body .ww-title-link:hover .card-title{
+    color: #34E658;
+}
+
+.section-ww .ww-wrapper .ww-body .card-title{
+    font-size: 1.25rem;
+    transition: all .2s ease-out;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.section-ww .info-post .post-author, 
+.section-ww .info-post .post-date, 
+.section-ww .info-post span {
+    font-size: 12px;
+}
+
+
+
+
+/* ================================ END SECTION WORLDWIDE  =============================================== */
+
+
 
 
 

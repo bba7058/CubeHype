@@ -368,6 +368,151 @@ get_header();
 							</div>
 						</div>
 					</section>
+					<section class="section-ww">
+						<div class="header-category">
+							<div class="category-title ww">Worldwide</div>
+						</div>
+						<div class="row">
+							<div class="col-6 col-md-4 px-2">
+								<div class="card border-0 ww-wrapper">
+									<a href="#" class="ww-link-img">
+										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/carissa-gan-oYmT4go4hTk-unsplash.jpg')?>" alt="">
+									</a>
+									<div class="card-body ww-body">
+										<a href="#" class="ww-title-link">
+											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</a>
+										<div class="info-post">
+											<div class="post-author">
+												<i class="fa fa-user mr-2" aria-hidden="true"></i>
+												Admin
+											</div>
+											<span class="mx-3">|</span>
+											<div class="post-date">
+												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+												3 สิงหาคม 2021
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-md-4 px-2">
+								<div class="card border-0 ww-wrapper">
+									<a href="#" class="ww-link-img">
+										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/emeric-deroubaix-ADznPBBNpP8-unsplash.jpg')?>" alt="">
+									</a>
+									<div class="card-body ww-body">
+										<a href="#" class="ww-title-link">
+											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</a>
+										<div class="info-post">
+											<div class="post-author">
+												<i class="fa fa-user mr-2" aria-hidden="true"></i>
+												Admin
+											</div>
+											<span class="mx-3">|</span>
+											<div class="post-date">
+												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+												3 สิงหาคม 2021
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-md-4 px-2">
+								<div class="card border-0 ww-wrapper">
+									<a href="#" class="ww-link-img">
+										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/gabriel-voltz-xCr7cmReH3Y-unsplash.jpg')?>" alt="">
+									</a>
+									<div class="card-body ww-body">
+										<a href="#" class="ww-title-link">
+											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</a>
+										<div class="info-post">
+											<div class="post-author">
+												<i class="fa fa-user mr-2" aria-hidden="true"></i>
+												Admin
+											</div>
+											<span class="mx-3">|</span>
+											<div class="post-date">
+												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+												3 สิงหาคม 2021
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-md-4 px-2">
+								<div class="card border-0 ww-wrapper">
+									<a href="#" class="ww-link-img">
+										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/j-a-neshan-paul-Qm8q-VUjLqs-unsplash.jpg')?>" alt="">
+									</a>
+									<div class="card-body ww-body">
+										<a href="#" class="ww-title-link">
+											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</a>
+										<div class="info-post">
+											<div class="post-author">
+												<i class="fa fa-user mr-2" aria-hidden="true"></i>
+												Admin
+											</div>
+											<span class="mx-3">|</span>
+											<div class="post-date">
+												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+												3 สิงหาคม 2021
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-md-4 px-2">
+								<div class="card border-0 ww-wrapper">
+									<a href="#" class="ww-link-img">
+										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/matt-wang-JkdchN8zPMo-unsplash.jpg')?>" alt="">
+									</a>
+									<div class="card-body ww-body">
+										<a href="#" class="ww-title-link">
+											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</a>
+										<div class="info-post">
+											<div class="post-author">
+												<i class="fa fa-user mr-2" aria-hidden="true"></i>
+												Admin
+											</div>
+											<span class="mx-3">|</span>
+											<div class="post-date">
+												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+												3 สิงหาคม 2021
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 col-md-4 px-2">
+								<div class="card border-0 ww-wrapper">
+									<a href="#" class="ww-link-img">
+										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nick-jones-dNKswTQCBy4-unsplash.jpg')?>" alt="">
+									</a>
+									<div class="card-body ww-body">
+										<a href="#" class="ww-title-link">
+											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</a>
+										<div class="info-post">
+											<div class="post-author">
+												<i class="fa fa-user mr-2" aria-hidden="true"></i>
+												Admin
+											</div>
+											<span class="mx-3">|</span>
+											<div class="post-date">
+												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+												3 สิงหาคม 2021
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 				<div class="col-lg-4"></div>
 			</div>
