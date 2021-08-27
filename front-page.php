@@ -289,6 +289,85 @@ get_header();
 							</div>
 						</div>
 					</section>
+					<section class="section-ent">
+						<div class="header-category">
+							<div class="category-title ent">Entertainment</div>
+						</div>
+						<div class="row mx-auto">
+							<div class="col-6 ent-wrapper">
+								<a href="#" class="ent-list">
+									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/alex-litvin-MAYsdoYpGuk-unsplash.jpg')?>" class="img-cover" alt="">
+									<div class="text-overlay flex-center">
+										<div class="text-wrapper">
+											<div class="flex-center mb-2">
+												<div class="ent-info mr-1">
+													<span class="cate">บันเทิง</span>
+													<span>|</span>
+													<span class="tag">Disney</span>
+												</div>
+												<span class="ent-date">14/08/21</span>		
+											</div>
+											<h3 class="ent-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+										</div>
+									</div>		
+								</a>
+							</div>
+							<div class="col-6 ent-wrapper">
+								<a href="#" class="ent-list">
+									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/myke-simon-atsUqIm3wxo-unsplash.jpg')?>" class="img-cover" alt="">
+									<div class="text-overlay flex-center">
+										<div class="text-wrapper">
+											<div class="flex-center mb-2">
+												<div class="ent-info mr-1">
+													<span class="cate">บันเทิง</span>
+													<span>|</span>
+													<span class="tag">Disney</span>
+												</div>
+												<span class="ent-date">14/08/21</span>		
+											</div>
+											<h3 class="ent-title">สื่อต่างประเทศยืนยัน ‘พัคซอจุน’ เข้าร่วมจักรวาลมาร์เวล ใน Captain Marvel 2: The Marvels</h3>
+										</div>
+									</div>		
+								</a>
+							</div>
+							<div class="col-6 ent-wrapper">
+								<a href="#" class="ent-list">
+									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/krists-luhaers-AtPWnYNDJnM-unsplash.jpg')?>" class="img-cover" alt="">
+									<div class="text-overlay flex-center">
+										<div class="text-wrapper">
+											<div class="flex-center mb-2">
+												<div class="ent-info mr-1">
+													<span class="cate">บันเทิง</span>
+													<span>|</span>
+													<span class="tag">Disney</span>
+												</div>
+												<span class="ent-date">14/08/21</span>		
+											</div>
+											<h3 class="ent-title">‘ไอ้เข้โลกิ’ ผู้น่าสงสาร ชอบถูกลืมเอาเข้าฉากเพราะร่างจริงเป็น ‘หมอน’ จนกองถ่ายต้องเลิกช้า</h3>
+										</div>
+									</div>		
+								</a>
+							</div>
+							<div class="col-6 ent-wrapper">
+								<a href="#" class="ent-list">
+									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/samuel-wong-4R1wcvJb40c-unsplash.jpg')?>" class="img-cover" alt="">
+									<div class="text-overlay flex-center">
+										<div class="text-wrapper">
+											<div class="flex-center mb-2">
+												<div class="ent-info mr-1">
+													<span class="cate">บันเทิง</span>
+													<span>|</span>
+													<span class="tag">Disney</span>
+												</div>
+												<span class="ent-date">14/08/21</span>		
+											</div>
+											<h3 class="ent-title">ผู้กำกับ ‘Loki’ เผย แฟน ๆ ควรจำยานอวกาศลึกลับในตอนจบได้</h3>
+										</div>
+									</div>		
+								</a>
+							</div>
+						</div>
+					</section>
 				</div>
 				<div class="col-lg-4"></div>
 			</div>
