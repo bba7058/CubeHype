@@ -372,8 +372,8 @@ get_header();
 						<div class="header-category">
 							<div class="category-title ww">Worldwide</div>
 						</div>
-						<div class="row mx-auto">
-							<div class="col-6 col-md-4 px-1">
+						<div class="row">
+							<div class="col-6 col-md-4 px-2">
 								<div class="card border-0 ww-wrapper">
 									<a href="#" class="ww-link-img">
 										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/carissa-gan-oYmT4go4hTk-unsplash.jpg')?>" alt="">
@@ -396,7 +396,7 @@ get_header();
 									</div>
 								</div>
 							</div>
-							<div class="col-6 col-md-4 px-1">
+							<div class="col-6 col-md-4 px-2">
 								<div class="card border-0 ww-wrapper">
 									<a href="#" class="ww-link-img">
 										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/emeric-deroubaix-ADznPBBNpP8-unsplash.jpg')?>" alt="">
@@ -419,7 +419,7 @@ get_header();
 									</div>
 								</div>
 							</div>
-							<div class="col-6 col-md-4 px-1">
+							<div class="col-6 col-md-4 px-2">
 								<div class="card border-0 ww-wrapper">
 									<a href="#" class="ww-link-img">
 										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/gabriel-voltz-xCr7cmReH3Y-unsplash.jpg')?>" alt="">
@@ -442,7 +442,7 @@ get_header();
 									</div>
 								</div>
 							</div>
-							<div class="col-6 col-md-4 px-1">
+							<div class="col-6 col-md-4 px-2">
 								<div class="card border-0 ww-wrapper">
 									<a href="#" class="ww-link-img">
 										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/j-a-neshan-paul-Qm8q-VUjLqs-unsplash.jpg')?>" alt="">
@@ -465,7 +465,7 @@ get_header();
 									</div>
 								</div>
 							</div>
-							<div class="col-6 col-md-4 px-1">
+							<div class="col-6 col-md-4 px-2">
 								<div class="card border-0 ww-wrapper">
 									<a href="#" class="ww-link-img">
 										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/matt-wang-JkdchN8zPMo-unsplash.jpg')?>" alt="">
@@ -488,7 +488,7 @@ get_header();
 									</div>
 								</div>
 							</div>
-							<div class="col-6 col-md-4 px-1">
+							<div class="col-6 col-md-4 px-2">
 								<div class="card border-0 ww-wrapper">
 									<a href="#" class="ww-link-img">
 										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nick-jones-dNKswTQCBy4-unsplash.jpg')?>" alt="">
@@ -506,141 +506,6 @@ get_header();
 											<div class="post-date">
 												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
 												3 สิงหาคม 2021
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="section-lastest">
-						<div class="header-category">
-							<div class="category-title lastest">Latest Post</div>
-						</div>
-						<div class="row mx-auto">
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/clever-visuals-lGCVWSOui5U-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-													เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
-											</div>	
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/khamkeo-vilaysing-eBoXzvsb4WM-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-													เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
-											</div>		
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nrd-a2JMcWOtNAs-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-														เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/samuel-wong-4R1wcvJb40c-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-														เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
 											</div>
 										</div>
 									</div>
