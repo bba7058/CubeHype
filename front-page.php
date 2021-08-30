@@ -14,6 +14,10 @@
 
 get_header();
 ?>
+	<!-- FB page embed -->
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
+	
 	<div class="container">
 		<section class="section-trending">
 			<div class="row h-100 mx-auto">
@@ -242,7 +246,7 @@ get_header();
 							<div class="col-6">
 								<div class="card border-0 tech-item mb-3">
 									<a href="#" class="card-link-img">
-										<img class="card-img-top img-tech" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg')?>" alt="">
+										<img class="card-img-top img-tech" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/eagan-hsu-hrJs18Q8Hgk-unsplash.jpg')?>" alt="">
 									</a>
 										<div class="card-body px-0">
 										<a href="#" class="card-link">
@@ -652,7 +656,7 @@ get_header();
 						</div>
 					</section>
 				</div>
-				<div class="col-lg-4"></div>
+				<?php get_sidebar(); ?>
 			</div>
 		</div>
 	</div>

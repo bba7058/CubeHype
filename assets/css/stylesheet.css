@@ -279,6 +279,7 @@ a:hover{
 .section-lifestyle .first-item .card-title{
     font-weight: 600;
     font-size: 1.5rem;
+    color: #1b1c1e;
 }
 
 .section-lifestyle .first-item .card-text,
@@ -339,6 +340,7 @@ a:hover{
 
 .section-lifestyle .card-items .card-title{
     font-size: 15px;
+    color: #1b1c1e;
 }
 
 .section-lifestyle .img-life{
@@ -653,6 +655,127 @@ a:hover{
 
 
 
+/* ================================ SIDEBAR  =============================================== */
+
+
+.scroll-fixed{
+    position: fixed;
+    top: 0;
+    width: 350px;
+}
+
+.sidebar-contact{
+    padding: 10px 0px 50px 0px;
+}
+
+.sidebar-contact .header-contact {
+    padding-bottom: 15px;
+}
+
+.sidebar-contact .header-contact .header-title{
+    font-size: 1.25rem;
+    color: #1b1c1e;
+    font-weight: 500;
+}
+
+.sidebar-contact .header-contact .line-center{
+    background-color: #26cbff;
+    width: 45%;
+    height: 2px;
+    margin-left: 10px;
+}
+
+.sidebar-contact .fb-wrapper .fb-page{
+    text-align: center;
+    display: block;
+}
+
+.popular-wrapper .header-popular{
+    padding: 5px 15px;
+    background-color: #F24113;
+    margin-bottom: 10px;
+}
+
+.header-popular .popular-text{
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.header-popular .popular-text i{
+    color:#EAF825
+}
+
+.popular-content .popular-box{
+    padding: 25px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.popular-box .popular-link-img{
+    position: relative;
+    display: block;
+}
+
+.popular-box .popular-link-img:hover .popular-img{
+    filter: saturate(1.5);
+}
+
+.popular-box .popular-img{
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-out;
+}
+
+.popular-box .popular-img.first{
+    height: 160px;
+}
+
+.popular-box .number-overlay{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #26CBFF;
+    color: #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.popular-box .number-overlay.small{
+    height: 25px;
+    width: 25px;
+    font-size: 13px;
+}
+
+
+.popular-box .popular-detail{
+    padding-top: 10px;
+}
+
+.popular-detail .popular-title-link:hover .popular-title{
+    color: #26CBFF;
+}
+
+.popular-box .popular-detail .popular-title{
+    font-size: 0.875rem;
+    color: #1b1c1e;
+    transition: all 0.2s ease-out;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.popular-box .popular-detail .popular-title.first{
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    line-height: 1.2;
+}
+
+
+
+
+/* ================================ END SIDEBAR  =============================================== */
+
+
 
 
 @media screen and (max-width: 1199.98px){
@@ -662,6 +785,9 @@ a:hover{
         font-size: 1.5rem;
     }
 
+    .scroll-fixed{
+        width: 290px;
+    }
 
 }
 
@@ -689,6 +815,18 @@ a:hover{
     .section-lifestyle .first-item .card-title,
     .section-tech .tech-item .card-title  {
         font-size: 1.5rem;
+    }
+
+    .sidebar{
+        padding: 50px 0px;
+    }
+
+    .popular-box .popular-img.first {
+        height: 300px;
+    }
+
+    .popular-box .popular-img {
+        height: 170px;
     }
 }
 
@@ -751,6 +889,14 @@ a:hover{
 
     .section-lastest .lastest-items .card-text {
         font-size: 0.75rem;
+    }
+
+    .popular-box .popular-img.first {
+        height: 220px;
+    }
+
+    .popular-box .popular-img {
+        height: 150px;
     }
 
 }
