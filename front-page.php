@@ -299,7 +299,7 @@ get_header();
 									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/alex-litvin-MAYsdoYpGuk-unsplash.jpg')?>" class="img-cover" alt="">
 									<div class="text-overlay flex-center">
 										<div class="text-wrapper">
-											<div class="flex-center mb-2">
+											<div class="flex-center flex-column flex-sm-row mb-2">
 												<div class="ent-info mr-1">
 													<span class="cate">บันเทิง</span>
 													<span>|</span>
@@ -317,7 +317,7 @@ get_header();
 									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/myke-simon-atsUqIm3wxo-unsplash.jpg')?>" class="img-cover" alt="">
 									<div class="text-overlay flex-center">
 										<div class="text-wrapper">
-											<div class="flex-center mb-2">
+											<div class="flex-center flex-column flex-sm-row mb-2">
 												<div class="ent-info mr-1">
 													<span class="cate">บันเทิง</span>
 													<span>|</span>
@@ -335,7 +335,7 @@ get_header();
 									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/krists-luhaers-AtPWnYNDJnM-unsplash.jpg')?>" class="img-cover" alt="">
 									<div class="text-overlay flex-center">
 										<div class="text-wrapper">
-											<div class="flex-center mb-2">
+											<div class="flex-center flex-column flex-sm-row mb-2">
 												<div class="ent-info mr-1">
 													<span class="cate">บันเทิง</span>
 													<span>|</span>
@@ -353,7 +353,7 @@ get_header();
 									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/samuel-wong-4R1wcvJb40c-unsplash.jpg')?>" class="img-cover" alt="">
 									<div class="text-overlay flex-center">
 										<div class="text-wrapper">
-											<div class="flex-center mb-2">
+											<div class="flex-center flex-column flex-sm-row mb-2">
 												<div class="ent-info mr-1">
 													<span class="cate">บันเทิง</span>
 													<span>|</span>
@@ -646,6 +646,9 @@ get_header();
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="btn-load">
+							<button tyle="button" class="btn btn-more">LOAD MORE</button>
 						</div>
 					</section>
 				</div>

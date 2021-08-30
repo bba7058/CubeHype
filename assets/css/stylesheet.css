@@ -261,7 +261,9 @@ a:hover{
     color: #fff;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
+    letter-spacing: .2px;
+    text-transform: uppercase;
 }
 
 .category-title.life{
@@ -276,7 +278,7 @@ a:hover{
 
 .section-lifestyle .first-item .card-title{
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .section-lifestyle .first-item .card-text,
@@ -369,7 +371,8 @@ a:hover{
 
 .section-tech .tech-item .card-title{
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
+    color: #1b1c1e;
 }
 
 
@@ -535,6 +538,7 @@ a:hover{
     transition: all .2s ease-out;
     margin-bottom: 5px;
     font-weight: 600;
+    color: #1b1c1e;
 }
 
 .section-ww .info-post .post-author, 
@@ -601,6 +605,7 @@ a:hover{
 
 .section-lastest .lastest-link .card-title{
     font-size: 1.25rem;
+    color: #1b1c1e;
 }
 
 .section-lastest .lastest-items .info-post{
@@ -617,7 +622,30 @@ a:hover{
     -webkit-box-orient: vertical;
 }
 
+.btn-load{
+    text-align: center;
+    padding: 10px 0px;
+}
 
+.btn-more{
+    background-color: transparent;
+    border: 2px solid #26cbff;
+    border-radius: 0px;
+    color: #26cbff;
+    font-family: 'Poppins', sans-serif;
+    padding: .375rem 1rem;
+    transition: all 0.4s ease-out;
+}
+
+.btn-more:hover{
+    background-color: #26cbff;
+    border: 2px solid #26cbff;
+    color: #fff;
+}
+
+.btn-more:focus{
+    border: 2px solid #26cbff;
+}
 
 
 
@@ -715,6 +743,7 @@ a:hover{
         font-size: 12px;
     }
 
+    .section-ent .ent-title,
     .section-ww .ww-wrapper .ww-body .card-title,
     .section-lastest .lastest-link .card-title {
         font-size: 1rem;
