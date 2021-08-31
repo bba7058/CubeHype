@@ -23,7 +23,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 <?php wp_body_open(); ?>
 
 	<nav class="navbar navbar-expand-lg navbar-light custom-navbar">

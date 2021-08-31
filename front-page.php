@@ -18,7 +18,7 @@ get_header();
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
-	<div class="container">
+	<div class="container px-2">
 		<section class="section-trending">
 			<div class="row h-100 mx-auto">
 				<div class="col-12 col-lg-6 trending-left">
@@ -65,7 +65,7 @@ get_header();
 				</div>
 			</div>
 		</section>
-		<div class="content">
+		<div class="content pb-5">
 			<div class="row">
 				<div class="col-lg-8">
 					<section class="section-lifestyle">
@@ -659,7 +659,6 @@ get_header();
 				<?php get_sidebar(); ?>
 			</div>
 		</div>
-	</div>
 
 
 <?php
