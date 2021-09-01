@@ -1,6 +1,11 @@
 jQuery(function ($){
     var fixTop = $('.popular-position').offset().top +(100);  
-    var sidebar = $(window).height() + $('.content').height() -203;
+    var sidebar = $(window).height() + $('.content').height() -202;
+
+    var navbar_height = $('.custom-navbar').outerHeight(true);
+    var sectop_height = $('#preview').outerHeight(true);
+    
+    var sum_height= navbar_height + sectop_height;
 
     var scrollpos = $(window).scrollTop(); 
     var scrollbottom = $(window).scrollTop() + $(window).height(); 
@@ -14,8 +19,14 @@ jQuery(function ($){
         }
         if (scrollbottom >= sidebar) {          
             $('.popular-position').addClass('non-fixed');
+            $('.popular-position').css({
+                'top': sidebar - $(window).height() - sum_height + 'px'
+            });
         } else {                              
             $('.popular-position').removeClass('non-fixed');
+            $('.popular-position').css({
+                'top': '0'
+            });
         }
     }
 
@@ -32,10 +43,16 @@ jQuery(function ($){
                 $('.popular-position').removeClass('scroll-fixed');
             }
 
-            if (currentScrollbottom >= sidebar) {          
-                $('.popular-position').addClass('non-fixed');
+            if (currentScrollbottom >= sidebar) { 
+                $('.popular-position').addClass('non-fixed');         
+                $('.popular-position').css({
+                    'top': sidebar - $(window).height() - sum_height + 'px'
+                });
             } else {                              
                 $('.popular-position').removeClass('non-fixed');
+                $('.popular-position').css({
+                    'top': '0'
+                });
             }
         }
     });

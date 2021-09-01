@@ -64,7 +64,7 @@ a:hover{
     background-color: #fff;
     min-width: 160px;
     box-shadow: 0px 2px 6px 0px #d0d0d0;
-    z-index: 1;
+    z-index: 2;
     border: none;
 }
 
@@ -120,7 +120,7 @@ a:hover{
 /* ================================ END NAVBAR  =============================================== */
 
 
-/* ================================ TOP SECTION  =============================================== */
+/* ================================ SECTION TRENDING =============================================== */
 
 
 .section-trending{
@@ -238,7 +238,7 @@ a:hover{
  }
 
 
-/* ================================ END TOP SECTION  =============================================== */
+/* ================================ END SECTION TRENDING =============================================== */
 
 
 /* ================================ SECTION LIFESTYLE =============================================== */
@@ -675,12 +675,10 @@ a:hover{
 
 .non-fixed{
     position: absolute;
-    top: inherit;
-    bottom: 424px;
 }
 
 .sidebar-contact{
-    padding: 10px 0px 50px 0px;
+    padding: 0px 0px 50px 0px;
 }
 
 .sidebar-contact .header-contact {
@@ -910,17 +908,190 @@ a:hover{
 
 /* ================================ END FOOTER  =============================================== */
 
+/* ================================ BREADCRUMB  =============================================== */
+
+.breadcrumb{
+    background-color: transparent;
+    margin: 0rem 0rem 1rem 0rem;
+    padding: 0.5rem 0rem;
+}
+
+.breadcrumb-items{
+    position: relative;
+    padding: 5px 30px 5px 0px;
+    color: #B4B4B4;
+    font-weight: 500;
+    transition: all 0.4s ease-out;
+}
+
+.breadcrumb-items:hover{
+    color: #3b3b3b;
+    text-decoration: underline;
+}
+
+.breadcrumb-items:visited{
+    color: #B4B4B4;
+}
+
+.breadcrumb-items:not(:last-child):after{
+    content: '\f105';
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+}
+
+.category-header{
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #26CBFF;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+
+/* ================================ END BREADCRUMB  =============================================== */
+
+
+/* ================================ SECTION TOP  =============================================== */
+
+.section-top{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.section-top .wrapper-left,
+.section-top .wrapper-right{
+    padding: 0px 2px;
+    height: 100%;
+}
+
+.section-top .link-wrapper{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-top .link-wrapper:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 20%, rgb(0,0,0)100%);
+    opacity: 0.7;
+    transition: opacity .2s ease-out;
+}
+
+.section-top .link-wrapper:hover:after{
+    background: linear-gradient(to bottom, transparent 20%, rgb(0,0,0)100%);
+    opacity: 0.9;
+}
+
+.section-top .img-top{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.section-top .top-header{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px;
+    z-index: 1;
+    transition: all .25s ease-out;
+}
+
+.section-top .top-header:hover{
+    -ms-transform: translate(0,-10px);
+    transform: translate(0,-10px);
+}
+
+.section-top .top-title{
+    color: #e8e8e8;
+    transition: all .15s ease-out;
+}
+
+.section-top .top-title:hover{
+    color: #26cbff;
+}
+
+.section-top .top-date{
+    color: #f6f6f6;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.section-top .category-post{
+    display: flex;
+}
+
+.section-top .category-post-item{
+    color: #26CBFF;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+
+/* ================================ END SECTION TOP  =============================================== */
+
+/* ================================  CATEGORY CONTENT  =============================================== */
+
+.category-content .category-item .img-category {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-content .category-item.big .img-category {
+    height: 300px;
+}
+
+.category-content .category-type {
+    color: #26CBFF;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.category-content .category-item .card-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #1b1c1e;
+}
+
+.category-content .card-link{
+    transition: all 0.4s ease-out;
+}
+
+.category-content .card-link:hover .card-title{
+    color: #26CBFF;
+}
+
+/* ================================ END CATEGORY CONTENT  =============================================== */
+
 
 
 @media screen and (max-width: 1199.98px){
 
     .section-trending .trending-left .title-left,
-    .section-trending .box-right .title-left {
+    .section-trending .box-right .title-left,
+    .section-top .top-title{
         font-size: 1.5rem;
     }
 
     .scroll-fixed{
         width: 290px;
+    }
+
+    .category-content .category-item .card-title {
+        font-size: 1.25rem;
     }
 
 }
@@ -993,6 +1164,14 @@ a:hover{
     .footer-content .footer-center .dev-by {
         display: none;
     }
+
+    .section-top .img-top{
+        height: 300px;
+    }
+
+    .section-top .top-title {
+        font-size: 1.25rem;
+    }
 }
 
 @media screen and (max-width: 767.98px){
@@ -1008,6 +1187,11 @@ a:hover{
     .section-tech .tech-item .img-tech{
         height: 28vw;
     } 
+
+    .section-top .wrapper-left,
+    .section-top .wrapper-right{
+        padding: 0px 0px 2px 0px;
+    }
 
 }
 

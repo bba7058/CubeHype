@@ -19,7 +19,7 @@ get_header();
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
 	<div class="container px-2">
-		<section class="section-trending">
+		<section class="section-trending" id="preview">
 			<div class="row h-100 mx-auto">
 				<div class="col-12 col-lg-6 trending-left">
 					<a href="#" class="trending-item">
