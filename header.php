@@ -27,61 +27,43 @@
 <?php wp_body_open(); ?>
 
 	<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="<?= esc_url(home_url()); ?>">
 			<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/brand-logo.png')?>" class="img-brand" alt="brand-logo">
 		</a>
 		<div class="menu-desktop ml-auto">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 				<li class="nav-item active">
-					<a class="nav-link active px-3 dropdown-wrapper" href="#">Home</a>
+					<a class="nav-link active px-3 dropdown-wrapper" href="<?= esc_url(home_url()); ?>">Home</a>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-wrapper px-3" href="#">
-						Lifestyle
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="dropdown-menu dropdown-hover">
-						<a class="dropdown-item dropdown-list" href="#">Lifestyle 1</a>
-						<a class="dropdown-item dropdown-list" href="#">Lifestyle 2</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-wrapper px-3" href="#">
-						Technology
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="dropdown-menu dropdown-hover">
-						<a class="dropdown-item dropdown-list" href="#">Technology 1</a>
-						<a class="dropdown-item dropdown-list" href="#">Technology 2</a>
-						<a class="dropdown-item dropdown-list" href="#">Technology 3</a>
-						<a class="dropdown-item dropdown-list" href="#">Technology 4</a>
-						<a class="dropdown-item dropdown-list" href="#">Technology 5</a>
-						<a class="dropdown-item dropdown-list" href="#">Technology 6</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-wrapper px-3" href="#">
-						Entertainment
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="dropdown-menu dropdown-hover">
-						<a class="dropdown-item dropdown-list" href="#">Entertainment 1</a>
-						<a class="dropdown-item dropdown-list" href="#">Entertainment 2</a>
-						<a class="dropdown-item dropdown-list" href="#">Entertainment 3</a>
-						<a class="dropdown-item dropdown-list" href="#">Entertainment 4</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-wrapper px-3" href="#">
-						Worldwide
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="dropdown-menu dropdown-hover">
-						<a class="dropdown-item dropdown-list" href="#">Worldwide 1</a>
-						<a class="dropdown-item dropdown-list" href="#">Worldwide 2</a>
-						<a class="dropdown-item dropdown-list" href="#">Worldwide 3</a>
-					</div>
-				</li>
+				
+				<?php
+
+					$categories = get_categories(array(
+						'orderby' => 'description',
+   						'order'   => 'ASC',
+						'parent' => 0,
+					));
+
+					foreach($categories as $category) { ?>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-wrapper px-3" href="<?= esc_url(get_category_link($category->cat_ID)); ?>">
+								<?= $category->name ?>
+							<i class="fas fa-angle-down"></i>
+							</a>
+							<div class="dropdown-menu dropdown-hover">
+								<?php 
+									$child_categories = get_categories(
+										array( 'parent' => $category->cat_ID )
+								); 
+
+								foreach($child_categories as $child_category) {  ?>
+									<a class="dropdown-item dropdown-list" href="<?= esc_url(get_category_link($child_category->cat_ID)); ?>">
+										<?= $child_category->name ?>
+									</a>
+								<?php } ?>
+							</div>
+						</li>
+					<?php } ?>
 			</ul>
 		</div>
 		<button class="navbar-toggler d-lg-none border-0 ml-auto" type="button" data-toggle="collapse" data-target="#collapse-menu" aria-controls="collapse-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,12 +71,16 @@
 		</button>
 
 
-		<button type="button" class="search-icon ml-0 mx-lg-5">
+		<div class="search-box">
+			<button type="button" class="search-icon ml-0">
 				<i class="fa fa-search"></i>
-		</button>
+			</button>
+			<input class="form-control input-search" type="text" placeholder="ค้นหา...">
+		</div>
+	
 
 		<form class="form-inline my-2 my-lg-0 d-none">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search">
+			
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
 
@@ -102,55 +88,28 @@
 		<div class="collapse navbar-collapse pb-2 menu-mobile" id="collapse-menu">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 				<li class="nav-item active">
-					<a class="nav-link active px-3 collapse-sub-memu" href="#">Home</a>
+					<a class="nav-link active px-3 collapse-sub-memu" href="<?= esc_url(home_url()); ?>">Home</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link collapse-sub-memu px-3" href="#" data-toggle="collapse" data-target="#collapse-lifestyle" aria-controls="collapse-lifestyle" aria-expanded="false" aria-label="Toggle navigation">
-						Lifestyle
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="collapse navbar-collapse" id="collapse-lifestyle">
-						<a class="dropdown-item sub-menu-list" href="#">Lifestyle 1</a>
-						<a class="dropdown-item sub-menu-list" href="#">Lifestyle 2</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link collapse-sub-memu px-3" href="#" data-toggle="collapse" data-target="#collapse-tech" aria-controls="collapse-tech" aria-expanded="false" aria-label="Toggle navigation">
-						Technology
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="collapse navbar-collapse" id="collapse-tech">
-						<a class="dropdown-item sub-menu-list" href="#">Technology 1</a>
-						<a class="dropdown-item sub-menu-list" href="#">Technology 2</a>
-						<a class="dropdown-item sub-menu-list" href="#">Technology 3</a>
-						<a class="dropdown-item sub-menu-list" href="#">Technology 4</a>
-						<a class="dropdown-item sub-menu-list" href="#">Technology 5</a>
-						<a class="dropdown-item sub-menu-list" href="#">Technology 6</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link collapse-sub-memu px-3" href="#" data-toggle="collapse" data-target="#collapse-ent" aria-controls="collapse-ent" aria-expanded="false" aria-label="Toggle navigation">
-						Entertainment
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="collapse navbar-collapse" id="collapse-ent">
-						<a class="dropdown-item sub-menu-list" href="#">Entertainment 1</a>
-						<a class="dropdown-item sub-menu-list" href="#">Entertainment 2</a>
-						<a class="dropdown-item sub-menu-list" href="#">Entertainment 3</a>
-						<a class="dropdown-item sub-menu-list" href="#">Entertainment 4</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link collapse-sub-memu px-3" href="#" data-toggle="collapse" data-target="#collapse-ww" aria-controls="collapse-ww" aria-expanded="false" aria-label="Toggle navigation">
-						Worldwide
-					<i class="fas fa-angle-down"></i>
-					</a>
-					<div class="collapse navbar-collapse" id="collapse-ww">
-						<a class="dropdown-item sub-menu-list" href="#">Worldwide 1</a>
-						<a class="dropdown-item sub-menu-list" href="#">Worldwide 2</a>
-						<a class="dropdown-item sub-menu-list" href="#">Worldwide 3</a>
-					</div>
-				</li>
+				<?php foreach($categories as $category) { ?>
+					<li class="nav-item">
+						<a class="nav-link collapse-sub-memu px-3" href="<?= esc_url(get_category_link($category->cat_ID)); ?>" data-toggle="collapse" data-target="#collapse-<?= $category->slug; ?>" aria-controls="collapse-<?= $category->slug; ?>" aria-expanded="false" aria-label="Toggle navigation">
+							<?= $category->name ?>
+						<i class="fas fa-angle-down"></i>
+						</a>
+						<div class="collapse navbar-collapse" id="collapse-<?= $category->slug; ?>">
+						<?php 
+							$child_categories = get_categories(
+								array( 'parent' => $category->cat_ID )
+							); 
+
+							foreach($child_categories as $child_category) {  ?>
+								<a class="dropdown-item sub-menu-list" href="<?= esc_url(get_category_link($child_category->cat_ID)); ?>">
+									<?= $child_category->name ?>
+								</a>
+							<?php } ?>
+						</div>
+					</li>
+				<?php } ?>
 			</ul>
 		</div>
 	</nav>

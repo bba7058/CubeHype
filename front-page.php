@@ -186,9 +186,9 @@ get_header();
 										</div>
 									</div>
 								</div>
-							</div>	
+							</div>
+								
 						</div>
-
 					</section>
 					<section class="section-tech">
 						<div class="header-category">
@@ -652,7 +652,7 @@ get_header();
 							</div>
 						</div>
 						<div class="btn-load">
-							<button tyle="button" class="btn btn-more">LOAD MORE</button>
+							<button tyle="button" class="btn btn-more">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
 						</div>
 					</section>
 				</div>

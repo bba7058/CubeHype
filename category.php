@@ -272,7 +272,7 @@ get_header();
 						</div>
 					</section>
                     <div class="btn-load">
-                        <button tyle="button" class="btn btn-more">LOAD MORE</button>
+                        <button tyle="button" class="btn btn-more">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
                     </div>
 				</div>
 				<?php get_sidebar(); ?>
