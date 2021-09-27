@@ -73,121 +73,85 @@ get_header();
 							<div class="category-title life">Lifestyle</div>
 						</div>
 						<div class="row">
+						<?php     
+							$lifestyle_first = new WP_Query( array( 
+								'post_type' => 'post',
+								'post_status' => 'publish',
+								'category_name' => 'Lifestyle',
+							));
+
+							if ( $lifestyle_first->have_posts() ) : 
+								$lifestyle_first->the_post();
+						?>
 							<div class="col-md-6">
 								<div class="card border-0 first-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-lifestyle" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/roman-melnychuk-I2EGcmAAcAk-unsplash.jpg')?>" alt="">
+									<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
+										<?= the_post_thumbnail( 'large',
+												array('class' => 'card-img-top img-lifestyle')
+											); 
+										?>
 									</a>
 										<div class="card-body px-0">
-										<a href="#" class="card-link">
-											<h3 class="card-title mb-1">BANDAI เปิดตัวของเล่นชิ้นใหม่ “บับเบิ้ลไม่มีที่สิ้นสุด” ช่วยคลายความเครียด แถมการันตีด้วยรางวัล</h3>
+										<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
+											<h3 class="card-title mb-1"><?= get_the_title();?></h3>
 										</a>
 										<div class="info-post">
 											<div class="post-author">
 												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
+												<?= get_the_author(); ?>
 											</div>
 											<span class="mx-3">|</span>
 											<div class="post-date">
 												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
+												<?= get_the_date(); ?>
 											</div>
 										</div>
-										<p class="card-text">เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้</p>
+										<p class="card-text"><?= get_the_excerpt(); ?></p>
 									</div>
 								</div>
 							</div>
+						<?php endif; ?>
+
 							<div class="col-md-6">
-								<div class="card mb-3 card-items" style="max-width: 540px;">
-									<div class="row no-gutters">
-										<div class="col-4">
-											<a href="#" class="card-link-img">
-												<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nrd-a2JMcWOtNAs-unsplash.jpg')?>" class="img-life" alt="">
-											</a>	
-										</div>
-										<div class="col-8">
-											<div class="card-body py-1 px-2">
-												<a href="#" class="card-link">
-													<h3 class="card-title mb-1">Fall Guys: Ultimate Knockout เตรียมจัดอีเวนต์ครอสโอเวอร์กับ The Jungle Book</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card mb-3 card-items" style="max-width: 540px;">
-									<div class="row no-gutters">
-										<div class="col-4">
-											<a href="#" class="card-link-img">
-												<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/gabriel-voltz-xCr7cmReH3Y-unsplash.jpg')?>" class="img-life" alt="">
-											</a>	
-										</div>
-										<div class="col-8">
-											<div class="card-body py-1 px-2">
-												<a href="#" class="card-link">
-													<h3 class="card-title mb-1">Jurassic World Evolution 2 เตรียมวางจำหน่าย 9 พ.ย. นี้</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card mb-3 card-items" style="max-width: 540px;">
-									<div class="row no-gutters">
-										<div class="col-4">
-											<a href="#" class="card-link-img">
-												<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/jezael-melgoza-43rUwqdoD1g-unsplash.jpg')?>" class="img-life" alt="">
-											</a>	
-										</div>
-										<div class="col-8">
-											<div class="card-body py-1 px-2">
-												<a href="#" class="card-link">
-													<h3 class="card-title mb-1">ทิ้งไว้เป็นตำนาน! ลิโอเนล เมสซี ถูกบีบให้ทิ้งถ้วยรางวัลไว้ที่บาร์เซโลนา</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card mb-3 card-items" style="max-width: 540px;">
+								<?php     
+									$lifestyle_post = new WP_Query( array( 
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'category_name' => 'Lifestyle',
+										'posts_per_page' => 4,
+										'offset' => 1
+									));
+
+									while( $lifestyle_post->have_posts() ) : 
+										$lifestyle_post->the_post();
+								?>
+									<div class="card mb-3 card-items" style="max-width: 540px;">
 										<div class="row no-gutters">
 											<div class="col-4">
-												<a href="#" class="card-link-img">
-													<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/julian-o-hayon-Bs-zngH79Ds-unsplash.jpg')?>" class="img-life" alt="">
+												<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
+													<?= the_post_thumbnail( 'medium',
+															array('class' => 'img-life')
+														); 
+													?>
 												</a>	
 											</div>
 											<div class="col-8">
-											<div class="card-body py-1 px-2">
-												<a href="#" class="card-link">
-													<h3 class="card-title mb-1">คำเตือนสุดท้ายของ Stephen Hawking เกี่ยวกับโลกและอนาคตที่กำลังจะมาถึง</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
+												<div class="card-body py-1 px-2">
+													<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
+														<h3 class="card-title mb-1"><?= get_the_title();?></h3>
+													</a>
+													<div class="info-post">
+														<div class="post-date">
+															<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+															<?= get_the_date(); ?>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+									<?php endwhile; ?>
 							</div>
-								
 						</div>
 					</section>
 					<section class="section-tech">
@@ -195,102 +159,45 @@ get_header();
 							<div class="category-title tech">Technology</div>
 						</div>
 						<div class="row">
-							<div class="col-6">
-								<div class="card border-0 tech-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-tech" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/julian-o-hayon-Bs-zngH79Ds-unsplash.jpg')?>" alt="">
-									</a>
-										<div class="card-body px-0">
-										<a href="#" class="card-link">
-											<h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
+							<?php     
+								$tech_post = new WP_Query( array( 
+									'post_type' => 'post',
+									'post_status' => 'publish',
+									'category_name' => 'Technology',
+									'posts_per_page' => 4,
+								));
+
+								while( $tech_post->have_posts() ) : 
+									$tech_post->the_post();
+							?>
+								<div class="col-6">
+									<div class="card border-0 tech-item mb-3">
+										<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
+											<?= the_post_thumbnail( 'large',
+													array('class' => 'card-img-top img-tech')
+												); 
+											?>
 										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
+											<div class="card-body px-0">
+											<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
+												<h3 class="card-title mb-1"><?= get_the_title();?></h3>
+											</a>
+											<div class="info-post">
+												<div class="post-author">
+													<i class="fa fa-user mr-2" aria-hidden="true"></i>
+													<?= get_the_author(); ?>
+												</div>
+												<span class="mx-3">|</span>
+												<div class="post-date">
+													<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+													<?= get_the_date(); ?>
+												</div>
 											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
+											<p class="card-text"><?= get_the_excerpt(); ?></p>
 										</div>
-										<p class="card-text">เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้</p>
 									</div>
 								</div>
-							</div>
-							<div class="col-6">
-								<div class="card border-0 tech-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-tech" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/zhang-kaiyv-dhiOkqjewAM-unsplash.jpg')?>" alt="">
-									</a>
-										<div class="card-body px-0">
-										<a href="#" class="card-link">
-											<h3 class="card-title mb-1">iPhone และ Mac ในปี 2022 อาจใช้ชิปเทคโนโลยี 3 นาโนเมตร</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-										<p class="card-text">เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="card border-0 tech-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-tech" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/eagan-hsu-hrJs18Q8Hgk-unsplash.jpg')?>" alt="">
-									</a>
-										<div class="card-body px-0">
-										<a href="#" class="card-link">
-											<h3 class="card-title mb-1">AMD Radeon RX 6600 XT ขึ้นแท่นการ์ดจอเหมืองดีที่สุดตอนนี้</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-										<p class="card-text">เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="card border-0 tech-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-tech" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/luca-bravo-XJXWbfSo2f0-unsplash.jpg')?>" alt="">
-									</a>
-										<div class="card-body px-0">
-										<a href="#" class="card-link">
-											<h3 class="card-title mb-1">Zoom ปล่อยฟีเจอร์ Focus mode เน้นให้นักเรียนจับจ้องไปที่ครู ไม่ส่องเพื่อนเสียสมาธิ</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-										<p class="card-text">เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้</p>
-									</div>
-								</div>
-							</div>
+							<?php endwhile; ?>
 						</div>
 					</section>
 					<section class="section-ent">
@@ -298,78 +205,44 @@ get_header();
 							<div class="category-title ent">Entertainment</div>
 						</div>
 						<div class="row mx-auto">
+							<?php     
+								$ent_post = new WP_Query( array( 
+									'post_type' => 'post',
+									'post_status' => 'publish',
+									'category_name' => 'Entertainment',
+									'posts_per_page' => 4,
+								));
+
+								while( $ent_post->have_posts() ) : 
+									$ent_post->the_post();
+							?>
 							<div class="col-6 ent-wrapper">
-								<a href="#" class="ent-list">
-									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/alex-litvin-MAYsdoYpGuk-unsplash.jpg')?>" class="img-cover" alt="">
+								<a href="<?= esc_url(get_permalink()); ?>" class="ent-list">
+									<?= the_post_thumbnail( 'large',
+											array('class' => 'img-cover')
+										); 
+									?>
 									<div class="text-overlay flex-center">
 										<div class="text-wrapper">
 											<div class="flex-center flex-column flex-sm-row mb-2">
 												<div class="ent-info mr-1">
-													<span class="cate">บันเทิง</span>
-													<span>|</span>
-													<span class="tag">Disney</span>
+													<?php 
+														$parent_categories = get_the_category();
+
+														 foreach ( $parent_categories as $child_categories ) {
+													 ?>
+														<span class="cate"><?= $child_categories->cat_name ?></span>
+														<span>|</span>
+														<?php } ?>
 												</div>
-												<span class="ent-date">14/08/21</span>		
+												<span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
 											</div>
-											<h3 class="ent-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+											<h3 class="ent-title"><?= get_the_title();?></h3>
 										</div>
 									</div>		
 								</a>
 							</div>
-							<div class="col-6 ent-wrapper">
-								<a href="#" class="ent-list">
-									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/myke-simon-atsUqIm3wxo-unsplash.jpg')?>" class="img-cover" alt="">
-									<div class="text-overlay flex-center">
-										<div class="text-wrapper">
-											<div class="flex-center flex-column flex-sm-row mb-2">
-												<div class="ent-info mr-1">
-													<span class="cate">บันเทิง</span>
-													<span>|</span>
-													<span class="tag">Disney</span>
-												</div>
-												<span class="ent-date">14/08/21</span>		
-											</div>
-											<h3 class="ent-title">สื่อต่างประเทศยืนยัน ‘พัคซอจุน’ เข้าร่วมจักรวาลมาร์เวล ใน Captain Marvel 2: The Marvels</h3>
-										</div>
-									</div>		
-								</a>
-							</div>
-							<div class="col-6 ent-wrapper">
-								<a href="#" class="ent-list">
-									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/krists-luhaers-AtPWnYNDJnM-unsplash.jpg')?>" class="img-cover" alt="">
-									<div class="text-overlay flex-center">
-										<div class="text-wrapper">
-											<div class="flex-center flex-column flex-sm-row mb-2">
-												<div class="ent-info mr-1">
-													<span class="cate">บันเทิง</span>
-													<span>|</span>
-													<span class="tag">Disney</span>
-												</div>
-												<span class="ent-date">14/08/21</span>		
-											</div>
-											<h3 class="ent-title">‘ไอ้เข้โลกิ’ ผู้น่าสงสาร ชอบถูกลืมเอาเข้าฉากเพราะร่างจริงเป็น ‘หมอน’ จนกองถ่ายต้องเลิกช้า</h3>
-										</div>
-									</div>		
-								</a>
-							</div>
-							<div class="col-6 ent-wrapper">
-								<a href="#" class="ent-list">
-									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/samuel-wong-4R1wcvJb40c-unsplash.jpg')?>" class="img-cover" alt="">
-									<div class="text-overlay flex-center">
-										<div class="text-wrapper">
-											<div class="flex-center flex-column flex-sm-row mb-2">
-												<div class="ent-info mr-1">
-													<span class="cate">บันเทิง</span>
-													<span>|</span>
-													<span class="tag">Disney</span>
-												</div>
-												<span class="ent-date">14/08/21</span>		
-											</div>
-											<h3 class="ent-title">ผู้กำกับ ‘Loki’ เผย แฟน ๆ ควรจำยานอวกาศลึกลับในตอนจบได้</h3>
-										</div>
-									</div>		
-								</a>
-							</div>
+							<?php endwhile; ?>
 						</div>
 					</section>
 					<section class="section-ww">
@@ -377,144 +250,44 @@ get_header();
 							<div class="category-title ww">Worldwide</div>
 						</div>
 						<div class="row mx-auto">
-							<div class="col-6 col-md-4 px-1">
-								<div class="card border-0 ww-wrapper">
-									<a href="#" class="ww-link-img">
-										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/carissa-gan-oYmT4go4hTk-unsplash.jpg')?>" alt="">
-									</a>
-									<div class="card-body ww-body">
-										<a href="#" class="ww-title-link">
-											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
+							<?php     
+								$ww_post = new WP_Query( array( 
+									'post_type' => 'post',
+									'post_status' => 'publish',
+									'category_name' => 'Worldwide',
+									'posts_per_page' => 6,
+								));
+
+								while( $ww_post->have_posts() ) : 
+									$ww_post->the_post();
+							?>
+								<div class="col-6 col-md-4 px-1">
+									<div class="card border-0 ww-wrapper">
+										<a href="<?= esc_url(get_permalink()); ?>" class="ww-link-img">
+											<?= the_post_thumbnail( 'medium',
+													array('class' => 'img-ww')
+												); 
+											?>
 										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
+										<div class="card-body ww-body">
+											<a href="<?= esc_url(get_permalink()); ?>" class="ww-title-link">
+												<h3 class="card-title"><?= get_the_title();?></h3>
+											</a>
+											<div class="info-post">
+												<div class="post-author">
+													<i class="fa fa-user mr-2" aria-hidden="true"></i>
+													<?= get_the_author(); ?>
+												</div>
+												<span class="mx-3">|</span>
+												<div class="post-date">
+													<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+													<?= get_the_date(); ?>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-6 col-md-4 px-1">
-								<div class="card border-0 ww-wrapper">
-									<a href="#" class="ww-link-img">
-										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/emeric-deroubaix-ADznPBBNpP8-unsplash.jpg')?>" alt="">
-									</a>
-									<div class="card-body ww-body">
-										<a href="#" class="ww-title-link">
-											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-6 col-md-4 px-1">
-								<div class="card border-0 ww-wrapper">
-									<a href="#" class="ww-link-img">
-										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/gabriel-voltz-xCr7cmReH3Y-unsplash.jpg')?>" alt="">
-									</a>
-									<div class="card-body ww-body">
-										<a href="#" class="ww-title-link">
-											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-6 col-md-4 px-1">
-								<div class="card border-0 ww-wrapper">
-									<a href="#" class="ww-link-img">
-										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/j-a-neshan-paul-Qm8q-VUjLqs-unsplash.jpg')?>" alt="">
-									</a>
-									<div class="card-body ww-body">
-										<a href="#" class="ww-title-link">
-											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-6 col-md-4 px-1">
-								<div class="card border-0 ww-wrapper">
-									<a href="#" class="ww-link-img">
-										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/matt-wang-JkdchN8zPMo-unsplash.jpg')?>" alt="">
-									</a>
-									<div class="card-body ww-body">
-										<a href="#" class="ww-title-link">
-											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-6 col-md-4 px-1">
-								<div class="card border-0 ww-wrapper">
-									<a href="#" class="ww-link-img">
-										<img class="img-ww" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nick-jones-dNKswTQCBy4-unsplash.jpg')?>" alt="">
-									</a>
-									<div class="card-body ww-body">
-										<a href="#" class="ww-title-link">
-											<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												Admin
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												3 สิงหาคม 2021
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+								<?php endwhile; ?>
 						</div>
 					</section>
 					<section class="section-lastest">
@@ -522,134 +295,50 @@ get_header();
 							<div class="category-title lastest">Latest Post</div>
 						</div>
 						<div class="row mx-auto">
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/clever-visuals-lGCVWSOui5U-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-													เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
-											</div>	
+							<?php     
+								$lastest_post = new WP_Query( array( 
+									'post_type' => 'post',
+									'post_status' => 'publish',
+									'posts_per_page' => 4,
+								));
+
+								while( $lastest_post->have_posts() ) : 
+									$lastest_post->the_post();
+							?>
+								<div class="card mb-3 lastest-items">
+									<div class="row no-gutters">
+										<div class="col-4">
+											<a href="<?= esc_url(get_permalink()); ?>" class="lastest-link-img">
+												<?= the_post_thumbnail( 'medium',
+														array('class' => 'img-lastest')
+													); 
+												?>
+											</a>	
 										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/khamkeo-vilaysing-eBoXzvsb4WM-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
+										<div class="col-8">
+											<div class="card-body py-1 px-3">
+												<div class="inner-body-wrapper">
+													<a href="<?= esc_url(get_permalink()); ?>" class="lastest-link">
+														<h3 class="card-title mb-1"><?= get_the_title();?></h3>
+													</a>
+													<div class="info-post">
+														<div class="post-author">
+															<i class="fa fa-user mr-2" aria-hidden="true"></i>
+															<?= get_the_author(); ?>
+														</div>
+														<span class="mx-3">|</span>
+														<div class="post-date">
+															<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+															<?= get_the_date(); ?>
+														</div>
 													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-													เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
-											</div>		
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nrd-a2JMcWOtNAs-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-														เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
+													<p class="card-text"><?= get_the_excerpt(); ?></p>
+												</div>	
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="card mb-3 lastest-items">
-								<div class="row no-gutters">
-									<div class="col-4">
-										<a href="#" class="lastest-link-img">
-											<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/samuel-wong-4R1wcvJb40c-unsplash.jpg')?>" class="img-lastest" alt="">
-										</a>	
-									</div>
-									<div class="col-8">
-										<div class="card-body py-1 px-3">
-											<div class="inner-body-wrapper">
-												<a href="#" class="lastest-link">
-													<h3 class="card-title mb-1">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														Admin
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														3 สิงหาคม 2021
-													</div>
-												</div>
-												<p class="card-text">
-														เมื่อวานนี้ Evan Blass (@evleaks) ได้โพสต์ภาพเรนเดอร์ของ Fitbit Charge 5 ฟิตเนสแทร็กเกอร์รุ่นใหม่จากฟิตบิท (Fitbit) ภายใต้แบรนด์กูเกิล (Google) ที่จะคาดว่าจะมาพร้อมกับจอสีเป็นรุ่นแรกในไลน์อัป Charge นี้
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+								<?php endwhile; ?>
 						</div>
 						<div class="btn-load">
 							<button tyle="button" class="btn btn-more">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>

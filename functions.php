@@ -157,6 +157,15 @@ function demo_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'demo_scripts' );
 
+
+/**
+ * Add more excerpt Length.
+ */
+function custom_excerpt_length( $length ) {
+	return 350;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 /**
  * Implement the Custom Header feature.
  */

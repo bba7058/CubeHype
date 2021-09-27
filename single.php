@@ -40,7 +40,7 @@ get_header();
 								</div>
 								<div class="post-view">
 									<i class="fa fa-eye mr-2" aria-hidden="true"></i>
-									777
+									 <?= pvc_get_post_views();?>
 								</div>
 							</div>
 						</div>

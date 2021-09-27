@@ -528,6 +528,7 @@ a:hover{
     -webkit-line-clamp: 4;
     overflow: hidden;
     -webkit-box-orient: vertical;
+    text-align: center;
 }
 
 .section-ent .ent-title:hover{
