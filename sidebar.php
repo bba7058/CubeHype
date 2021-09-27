@@ -41,19 +41,30 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</div>
 			</div>
 			<div class="popular-content">
+				<?php 
+				$most_viewed = pvc_get_most_viewed_posts( 
+					array(
+						'order'	=> 'desc',
+						'post_type' => 'post',
+					));
+
+				?>
 				<div class="popular-box">
-					<a href="#" class="popular-link-img">
-						<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/emeric-deroubaix-ADznPBBNpP8-unsplash.jpg')?>" class="popular-img first" alt="">
+					<a href="<?= esc_url(get_permalink($most_viewed[0]-> ID));?>" class="popular-link-img">
+						<?= get_the_post_thumbnail($most_viewed[0]-> ID, 'large',
+								array('class' => 'popular-img first')
+							); 
+						?>
 						<div class="number-overlay flex-center">1</div>
 					</a>
 					<div class="popular-detail">
-						<a href="#" class="popular-title-link">
-							<h3 class="popular-title first">The Golden Boy เบอร์เกอร์ที่แพงที่สุดในโลกที่มีราคาเฉียด 2 แสนบาท</h3>
+						<a href="<?= esc_url(get_permalink($most_viewed[0]-> ID));?>" class="popular-title-link">
+							<h3 class="popular-title first"><?= get_the_title($most_viewed[0]-> ID);?></h3>
 						</a>
 						<div class="info-post">
 							<div class="post-date">
 								<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-								3 สิงหาคม 2021
+								<?= get_the_date('',$most_viewed[0]-> ID); ?>
 							</div>
 						</div>
 					</div>	
@@ -61,20 +72,23 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				<div class="popular-box">
 					<div class="row mx-auto">
 						<div class="col-5 px-1">
-							<a href="#" class="popular-link-img">
-								<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/anthony-espinosa-pYQSM-p_0_c-unsplash.jpg')?>" class="popular-img" alt="">
+							<a href="<?= esc_url(get_permalink($most_viewed[1]-> ID));?>" class="popular-link-img">
+							<?= get_the_post_thumbnail($most_viewed[1]-> ID, 'large',
+									array('class' => 'popular-img')
+								); 
+							?>
 								<div class="number-overlay small flex-center">2</div>
 							</a>
 						</div>
 						<div class="col-7 px-1">
 							<div class="popular-detail">
-								<a href="#" class="popular-title-link">
-									<h3 class="popular-title">The Golden Boy เบอร์เกอร์ที่แพงที่สุดในโลกที่มีราคาเฉียด 2 แสนบาท</h3>
+								<a href="<?= esc_url(get_permalink($most_viewed[1]-> ID));?>" class="popular-title-link">
+									<h3 class="popular-title"><?= get_the_title($most_viewed[1]-> ID);?></h3>
 								</a>
 								<div class="info-post">
 									<div class="post-date">
 										<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-										3 สิงหาคม 2021
+										<?= get_the_date('',$most_viewed[1]-> ID); ?>
 									</div>
 								</div>
 							</div>
@@ -84,20 +98,23 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				<div class="popular-box">
 					<div class="row mx-auto">
 						<div class="col-5 px-1">
-							<a href="#" class="popular-link-img">
-								<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/eagan-hsu-hrJs18Q8Hgk-unsplash.jpg')?>" class="popular-img" alt="">
+							<a href="<?= esc_url(get_permalink($most_viewed[2]-> ID));?>" class="popular-link-img">
+								<?= get_the_post_thumbnail($most_viewed[2]-> ID, 'large',
+										array('class' => 'popular-img')
+									); 
+								?>
 								<div class="number-overlay small flex-center">3</div>
 							</a>
 						</div>
 						<div class="col-7 px-1">
 							<div class="popular-detail">
-								<a href="#" class="popular-title-link">
-									<h3 class="popular-title">The Golden Boy เบอร์เกอร์ที่แพงที่สุดในโลกที่มีราคาเฉียด 2 แสนบาท</h3>
+								<a href="<?= esc_url(get_permalink($most_viewed[2]-> ID));?>" class="popular-title-link">
+									<h3 class="popular-title"><?= get_the_title($most_viewed[2]-> ID);?></h3>
 								</a>
 								<div class="info-post">
 									<div class="post-date">
 										<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-										3 สิงหาคม 2021
+										<?= get_the_date('',$most_viewed[2]-> ID); ?>
 									</div>
 								</div>
 							</div>
@@ -108,20 +125,23 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					<div class="popular-box">
 						<div class="row mx-auto">
 							<div class="col-5 px-1">
-								<a href="#" class="popular-link-img">
-									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/krists-luhaers-AtPWnYNDJnM-unsplash.jpg')?>" class="popular-img" alt="">
+								<a href="<?= esc_url(get_permalink($most_viewed[3]-> ID));?>" class="popular-link-img">
+									<?= get_the_post_thumbnail($most_viewed[3]-> ID, 'large',
+											array('class' => 'popular-img')
+										); 
+									?>
 									<div class="number-overlay small flex-center">4</div>
 								</a>
 							</div>
 							<div class="col-7 px-1">
 								<div class="popular-detail">
-									<a href="#" class="popular-title-link">
-										<h3 class="popular-title">The Golden Boy เบอร์เกอร์ที่แพงที่สุดในโลกที่มีราคาเฉียด 2 แสนบาท</h3>
+									<a href="<?= esc_url(get_permalink($most_viewed[3]-> ID));?>" class="popular-title-link">
+										<h3 class="popular-title"><?= get_the_title($most_viewed[3]-> ID);?></h3>
 									</a>
 									<div class="info-post">
 										<div class="post-date">
 											<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-											3 สิงหาคม 2021
+											<?= get_the_date('',$most_viewed[3]-> ID); ?>
 										</div>
 									</div>
 								</div>
@@ -131,20 +151,23 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					<div class="popular-box">
 						<div class="row mx-auto">
 							<div class="col-5 px-1">
-								<a href="#" class="popular-link-img">
-									<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/v2osk-YKpBFaS5adA-unsplash (1).jpg')?>" class="popular-img" alt="">
+								<a href="<?= esc_url(get_permalink($most_viewed[4]-> ID));?>" class="popular-link-img">
+									<?= get_the_post_thumbnail($most_viewed[4]-> ID, 'large',
+											array('class' => 'popular-img')
+										); 
+									?>
 									<div class="number-overlay small flex-center">5</div>
 								</a>
 							</div>
 							<div class="col-7 px-1">
 								<div class="popular-detail">
-									<a href="#" class="popular-title-link">
-										<h3 class="popular-title">The Golden Boy เบอร์เกอร์ที่แพงที่สุดในโลกที่มีราคาเฉียด 2 แสนบาท</h3>
+									<a href="<?= esc_url(get_permalink($most_viewed[4]-> ID));?>" class="popular-title-link">
+										<h3 class="popular-title"><?= get_the_title($most_viewed[4]-> ID);?></h3>
 									</a>
 									<div class="info-post">
 										<div class="post-date">
 											<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-											3 สิงหาคม 2021
+											<?= get_the_date('',$most_viewed[4]-> ID); ?>
 										</div>
 									</div>
 								</div>
