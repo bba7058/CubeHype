@@ -19,48 +19,115 @@ get_header();
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
 	<div class="container px-2">
-		<section class="section-trending" id="preview">
+		<section class="section-preview" id="preview">
 			<div class="row h-100 mx-auto">
-				<div class="col-12 col-lg-6 trending-left">
-					<a href="#" class="trending-item">
-						<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/levon-vardanyan-_EpaiWp5yC8-unsplash.jpg')?>" class="img-trending" alt="25 Amazing Facts You Didn’t Know About Animals">
-						<div class="trending-header flex-center px-3 py-2">
-							<h3 class="title-left mb-0">มาแบบเงียบ ๆ “สถานะ 24 ชั่วโมง” ฟีเจอร์ใหม่จาก Facebook ใช้งานคล้าย Stories</h3>
-						</div>
-						<div class="ribbon-trending">
-							<span>TRENDING</span>
-							<i class="fas fa-chart-bar"></i>
-						</div>
-					</a>	
-				</div>
-				<div class="col-12 col-lg-6 trending-right">
-					<div class="row mx-auto trending-right-top">
-						<div class="col-12 h-100 px-0 box-right">
-							<a href="#" class="trending-item">
-								<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/jingwei-ke-E7w_Ti4BSSs-unsplash.jpg')?>" class="img-trending" alt="25 Amazing Facts You Didn’t Know About Animals">
-								<div class="trending-header flex-center px-3 py-2">
-									<h3 class="title-left mb-0">เผยเทคโนโลยีใน MG HS รถยนต์ที่จะทำให้คุณเข้าใกล้คำว่า Autonomous car</h3>
-								</div>
-							</a>
-						</div>
+			
+				<?php
+					$lastets_it = new WP_Query( array( 
+						'post_type' => 'post',
+						'post_status' => 'publish',
+						'category_name' => 'Technology',
+					));
+
+					if ( $lastets_it->have_posts() ) : 
+						$lastets_it->the_post();
+				?>
+
+					<div class="col-12 col-lg-6 preview-left">
+						<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
+							<?= the_post_thumbnail( 'large',
+									array('class' => 'img-preview')
+								); 
+							?>
+							<div class="preview-header flex-center px-3 py-2">
+								<h3 class="title-left mb-0"><?= get_the_title();?></h3>
+							</div>
+							<div class="ribbon-top">
+								<span>Technology</span>
+							</div>
+						</a>	
 					</div>
-					<div class="row mx-auto trending-right-bottom">	
+				<?php endif; ?>
+
+				<div class="col-12 col-lg-6 preview-right">
+					<div class="row mx-auto preview-right-top">
+						<?php
+							$lastets_lifestyle = new WP_Query( array( 
+								'post_type' => 'post',
+								'post_status' => 'publish',
+								'category_name' => 'Lifestyle',
+							));
+
+							if ( $lastets_lifestyle->have_posts() ) : 
+								$lastets_lifestyle->the_post();
+						?>
+						<div class="col-12 h-100 px-0 box-right">
+							<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
+								<?= the_post_thumbnail( 'large',
+										array('class' => 'img-preview')
+									); 
+								?>
+								<div class="preview-header flex-center px-3 py-2">
+									<h3 class="title-left mb-0"><?= get_the_title();?></h3>
+								</div>
+								<div class="ribbon-top lifestyle">
+									<span>Lifestyle</span>
+								</div>
+							</a>
+						</div>
+						<?php endif; ?>
+					</div>
+					<div class="row mx-auto preview-right-bottom">
+						<?php
+							$lastets_ent = new WP_Query( array( 
+								'post_type' => 'post',
+								'post_status' => 'publish',
+								'category_name' => 'Entertainment',
+							));
+
+							if ( $lastets_ent->have_posts() ) : 
+								$lastets_ent->the_post();
+						?>	
 						<div class="col-sm-6 sm-box">
-							<a href="#" class="trending-item">
-								<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/amirali-mirhashemian-88YAXjnpvrM-unsplash.jpg')?>" class="img-trending" alt="25 Amazing Facts You Didn’t Know About Animals">
-								<div class="trending-header flex-center px-3 py-2">
-									<h3 class="title-left mb-0">17 ภาพการเปลี่ยนแปลงของสัตว์เลี้ยง เผยให้เห็นว่าพวกมันเติบโตเร็วแค่ไหน</h3>
+							<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
+								<?= the_post_thumbnail( 'large',
+										array('class' => 'img-preview')
+									); 
+								?>
+								<div class="preview-header flex-center px-3 py-2">
+									<h3 class="title-left mb-0"><?= get_the_title();?></h3>
+								</div>
+								<div class="ribbon-top ent">
+									<span>Entertainment</span>
 								</div>
 							</a>
 						</div>
+						<?php endif; ?>
+						<?php
+							$lastets_ww = new WP_Query( array( 
+								'post_type' => 'post',
+								'post_status' => 'publish',
+								'category_name' => 'Worldwide',
+							));
+
+							if ( $lastets_ww->have_posts() ) : 
+								$lastets_ww->the_post();
+						?>
 						<div class="col-sm-6 sm-box-2">
-							<a href="#" class="trending-item">
-								<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/zhang-kaiyv-dhiOkqjewAM-unsplash.jpg')?>" class="img-trending" alt="25 Amazing Facts You Didn’t Know About Animals">
-								<div class="trending-header flex-center px-3 py-2">
-									<h3 class="title-left mb-0">James McAvoy คนจริง เผาแผ่นเกมโปรดทิ้ง เพราะติดหนักจนไม่เป็นอันได้หลับได้นอน</h3>
+							<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
+								<?= the_post_thumbnail( 'large',
+										array('class' => 'img-preview')
+									); 
+								?>
+								<div class="preview-header flex-center px-3 py-2">
+									<h3 class="title-left mb-0"><?= get_the_title();?></h3>
+								</div>
+								<div class="ribbon-top ww">
+									<span>Worldwide</span>
 								</div>
 							</a>
 						</div>
+						<?php endif; ?>
 					</div>		
 				</div>
 			</div>
