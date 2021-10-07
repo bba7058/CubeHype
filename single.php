@@ -21,11 +21,11 @@ get_header();
 				<?php while ( have_posts() ) : the_post(); ?>
 					<section class="single-post">
 						<img src="<?= esc_url(the_post_thumbnail_url())?>" class="img-featured-post" alt="">
-						<div class="breadcrumb mb-0">
-							<a href="#" class="breadcrumb-items single">Home</a>
-							<a href="#" class="breadcrumb-items single">Lifestyle</a>
-							<a href="#" class="breadcrumb-items single">Food</a>
-						</div>
+						<?php
+						if ( function_exists('yoast_breadcrumb') ) {
+							yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
+						}
+						?>
 						<div class="header-title mb-3 border-bottom">
 							<h1 class="mt-0 title-post"><?php the_title();?></h1>
 							<div class="info-post">

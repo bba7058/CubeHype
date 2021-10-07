@@ -15,11 +15,11 @@ get_header();
 	
 	<div class="container px-2">
 		<section class="section-top pt-3" id="preview">
-        <div class="breadcrumb">
-            <a href="#" class="breadcrumb-items">Home</a>
-            <a href="#" class="breadcrumb-items">Lifestyle</a>
-            <a href="#" class="breadcrumb-items">Food</a>
-        </div>
+        <?php
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
+            }
+            ?>
         <h1 class="category-header">FOOD</h1>
 			<div class="row mx-auto">
 				<div class="col-12 col-md-6 wrapper-left">
