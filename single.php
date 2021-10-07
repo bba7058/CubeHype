@@ -46,28 +46,26 @@ get_header();
 						</div>
 						<div class="single-content border-bottom pb-3">
 							<?php the_content() ?>
+							<?php
+								$tags = get_the_tags();
+								if($tags):
+							?>
 							<div class="post-tag-box">
 								<div class="post-tag-label">
 									TAGS:
 								</div>
+								
 								<div class="post-tag-list-wrapper">
-									<a href="#" class="post-tag-list">
-										Burger
+									<?php
+										foreach($tags as $tag):
+									?>
+									<a href="<?= get_tag_link($tag->term_id );?>" class="post-tag-list">
+										<?= $tag->name;?>
 									</a>
-									<a href="#" class="post-tag-list">
-										Panda
-									</a>
-									<a href="#" class="post-tag-list">
-										Facebook
-									</a>
-									<a href="#" class="post-tag-list">
-										Travel
-									</a>
-									<a href="#" class="post-tag-list">
-										Food
-									</a>
+									<?php endforeach; ?>
 								</div>
 							</div>
+							<?php endif; ?>
 						</div>
 						<div class="social-share border-bottom">
 							<a href="#" class="social-list flex-center facebook">
