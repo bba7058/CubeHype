@@ -20,259 +20,72 @@ get_header();
                 yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
             }
             ?>
-        <h1 class="category-header">FOOD</h1>
+        <h1 class="category-header"><?=single_cat_title()?></h1>
+            <?php     
+                $post_top_category = new WP_Query( array( 
+                    'post_type'      => 'post',
+                    'post_status'    => 'publish',
+                    'category_name'  => single_cat_title('', false),
+                    'posts_per_page' => 2,
+                ));
+            ?>
 			<div class="row mx-auto">
+                <?php 
+                    while( $post_top_category->have_posts() ) : 
+                    $post_top_category->the_post();
+                ?>
 				<div class="col-12 col-md-6 wrapper-left">
-					<a href="#" class="link-wrapper">
-						<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/roman-melnychuk-I2EGcmAAcAk-unsplash.jpg')?>" class="img-top" alt="25 Amazing Facts You Didn’t Know About Animals">
-						<div class="top-header px-3 py-2">
+					<a href="<?= esc_url(get_permalink()); ?>" class="link-wrapper">
+                    <?= the_post_thumbnail( 'large',
+                            array('class' => 'img-top')
+                        ); 
+                    ?>
+						<div class="top-header px-3 py-3">
                             <div class="category-post">
-                                <div class="category-post-item">Food</div>
+                                <div class="category-post-item"><?=single_cat_title()?></div>
                             </div>
-							<h3 class="top-title mb-0">ลือ! OnePlus 9 RT จะอัปเกรดมาใช้กล้อง Sony IMX766 ความละเอียด 48 ล้านพิกเซล</h3>
-                            <div class="top-date">13 สิงหาคม 2021</div>
+							<h3 class="top-title mb-0"><?= get_the_title();?></h3>
+                            <div class="top-date"><?= get_the_date(); ?></div>
 						</div>
 					</a>	
 				</div>
-				<div class="col-12 col-md-6 wrapper-right">
-                    <a href="#" class="link-wrapper">
-                        <img src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/matt-wang-JkdchN8zPMo-unsplash.jpg')?>" class="img-top" alt="25 Amazing Facts You Didn’t Know About Animals">
-                        <div class="top-header px-3 py-2">
-                            <div class="category-post">
-                                <div class="category-post-item">Excercise</div>
-                            </div>
-                            <h3 class="top-title mb-0">River City Girls 2 เพิ่มตัวละคร Marian และ Provie</h3>
-                            <div class="top-date">13 สิงหาคม 2021</div>
-                        </div>
-                    </a>
-				</div>
+                <?php endwhile; ?>
 			</div>
 		</section>
 		<div class="content pb-5">
 			<div class="row">
 				<div class="col-lg-8">
 					<section class="category-content">
-						<div class="row">
-							<div class="col-6">
-								<div class="card border-0 category-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/julian-o-hayon-Bs-zngH79Ds-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าววงการเกม</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-6">
-								<div class="card border-0 category-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/levon-vardanyan-_EpaiWp5yC8-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าววงการเกม</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-12">
-								<div class="card border-0 category-item big mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/jingwei-ke-E7w_Ti4BSSs-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าววงการเกม</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-6">
-								<div class="card border-0 category-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/nrd-a2JMcWOtNAs-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">สัตว์</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-6">
-								<div class="card border-0 category-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">อาหาร</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-12">
-								<div class="card border-0 category-item big mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/clever-visuals-lGCVWSOui5U-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าววงการเกม</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-6">
-								<div class="card border-0 category-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/eagan-hsu-hrJs18Q8Hgk-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าววงการเกม</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-6">
-								<div class="card border-0 category-item mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/myke-simon-atsUqIm3wxo-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าววงการเกม</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
-                            <div class="col-12">
-								<div class="card border-0 category-item big mb-3">
-									<a href="#" class="card-link-img">
-										<img class="card-img-top img-category" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/j-a-neshan-paul-Qm8q-VUjLqs-unsplash.jpg')?>" alt="">
-									</a>
-                                    <div class="card-body px-0">
-                                        <div class="category-type">ข่าวต่างประเทศ</div>
-                                        <a href="#" class="card-link">
-                                            <h3 class="card-title mb-1">หนุ่มใช้ AirTag จนเจอสกูตเตอร์ที่โดนขโมยไป</h3>
-                                        </a>
-                                        <div class="info-post">
-                                            <div class="post-author">
-                                                <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                                                Admin
-                                            </div>
-                                            <span class="mx-3">|</span>
-                                            <div class="post-date">
-                                                <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                                                3 สิงหาคม 2021
-                                            </div>
-                                        </div>
-                                    </div>
-								</div>
-							</div>
+                    <?php     
+                        $post_category = new WP_Query( array( 
+                            'post_type'      => 'post',
+                            'post_status'    => 'publish',
+                            'category_name'  => single_cat_title('', false),
+                            'posts_per_page' => 9,
+                            'offset' => 2,
+                        ));
+                    ?>
+                            <div class="row">
+                            <?php 
+                                $i = 1;
+                                while( $post_category->have_posts() ) : 
+                                $post_category->the_post();
+
+                                if($i % 3 != 0) {
+                                    get_template_part( 'template-parts/content-category');
+                                    
+                                }
+                                elseif ($i % 3 == 0){
+                                    get_template_part( 'template-parts/content-category-big');
+                                }
+                                
+                                $i++;
+                           
+                           endwhile; ?>
 						</div>
 					</section>
                     <div class="btn-load">
-                        <button tyle="button" class="btn btn-more">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+                        <button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
                     </div>
 				</div>
 				<?php get_sidebar(); ?>
