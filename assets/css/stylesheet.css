@@ -376,7 +376,7 @@ a:hover{
 }
 
 .card-link-img{
-    -webkit-transition : -webkit-filter .4s ease-out
+    transition : -webkit-filter .4s ease-out
 }
 
 .card-link-img:hover{

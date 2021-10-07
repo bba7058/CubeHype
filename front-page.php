@@ -296,11 +296,9 @@ get_header();
 													<?php 
 														$parent_categories = get_the_category();
 
-														 foreach ( $parent_categories as $child_categories ) {
 													 ?>
-														<span class="cate"><?= $child_categories->cat_name ?></span>
+														<span class="cate"><?= get_cat_name($parent_categories[0]->category_parent) ?></span>
 														<span>|</span>
-														<?php } ?>
 												</div>
 												<span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
 											</div>
@@ -361,7 +359,7 @@ get_header();
 						<div class="header-category">
 							<div class="category-title lastest">Latest Post</div>
 						</div>
-						<div class="row mx-auto">
+						<div class="row mx-auto" id="lastest-post">
 							<?php     
 								$lastest_post = new WP_Query( array( 
 									'post_type' => 'post',
@@ -408,7 +406,7 @@ get_header();
 								<?php endwhile; ?>
 						</div>
 						<div class="btn-load">
-							<button tyle="button" class="btn btn-more">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+							<button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
 						</div>
 					</section>
 				</div>
