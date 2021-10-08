@@ -57,16 +57,21 @@ get_header();
 				<div class="col-lg-8">
                     <div id="inner-content">
                         <section class="category-content">
-                            <?php     
+                            <?php
+                                $offset = 2;   
+                                $per_page = 9;  
                                 $post_category = new WP_Query( array( 
                                     'post_type'      => 'post',
                                     'post_status'    => 'publish',
                                     'category_name'  => single_cat_title('', false),
-                                    'posts_per_page' => 9,
-                                    'offset' => 2,
+                                    'posts_per_page' => $per_page,
+                                    'offset' => $offset,
                                 ));
+
+                                $total_rows = max( 0, $post_category->found_posts - $offset );
+                                $num_page = ceil( $total_rows / $per_page );
                             ?>
-                                <div class="row" id="post-content">
+                                <div class="row" id="post-content" data-max="<?=$num_page?>">
                                 <?php 
                                     $i = 1;
                                     while( $post_category->have_posts() ) : 

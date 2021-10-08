@@ -47,6 +47,7 @@ jQuery(function ($){
     // btn more post
     $('#btn-more-post').on('click', function(){
         var button = $(this);
+        var max_page = $('#lastest-post').data('max');
         var data = {
                 'action': 'loadmore',
                 'offset' : script_object.page * 4
@@ -65,6 +66,10 @@ jQuery(function ($){
                     button.html( 'LOAD MORE <i class="fas fa-sync-alt ml-1"></i>' );
                     script_object.page++;
                     $('#lastest-post').append(response);
+
+                    if(max_page == script_object.page){
+                        button.remove();
+                    }
 
                     // position of content_height
                     currentScroll = $(window).scrollTop(); 
@@ -102,6 +107,7 @@ jQuery(function ($){
     // btn more post category
     $('#btn-more-post-category').on('click', function(){
         var button = $(this);
+        var max_page = $('#post-content').data('max');
         var data = {
                 'action': 'loadmore-category',
                 'offset' : (script_object.page * 9) + 2,
@@ -122,12 +128,15 @@ jQuery(function ($){
                     script_object.page++;
                     $('#post-content').append(response);
 
+                    if(max_page == script_object.page){
+                        button.remove();
+                    }
+
                     //position of content_height
                     currentScroll = $(window).scrollTop(); 
                     currentScrollbottom = $(window).scrollTop() + $(window).height();  
                     content_height = $(window).height() + $('.content').height() -202; 
                     inner_content_height = $('#inner-content').outerHeight(true);
-                    console.log('inner_content_height = '+ inner_content_height);
 
                     if($(window).width() >= 992) {
                         if(inner_content_height >= sidebar) {

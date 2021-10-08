@@ -360,14 +360,18 @@ get_header();
 							<div class="header-category">
 								<div class="category-title lastest">Latest Post</div>
 							</div>
-							<div class="row mx-auto" id="lastest-post">
-								<?php     
-									$lastest_post = new WP_Query( array( 
-										'post_type' => 'post',
-										'post_status' => 'publish',
-										'posts_per_page' => 4,
-									));
+							<?php
+								$lastest_post = new WP_Query( array( 
+									'post_type' => 'post',
+									'post_status' => 'publish',
+									'posts_per_page' => 4,
+								));
 
+								$num_page = $lastest_post->max_num_pages;
+
+							?>
+							<div class="row mx-auto" id="lastest-post" data-max="<?=$num_page?>">
+								<?php
 									while( $lastest_post->have_posts() ) : 
 										$lastest_post->the_post();
 								?>
