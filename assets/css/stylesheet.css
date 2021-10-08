@@ -1120,6 +1120,7 @@ a:hover{
 }
 
 .category-content .category-type {
+    display: inline-block;
     color: #26CBFF;
     font-size: 1.125rem;
     font-weight: 500;

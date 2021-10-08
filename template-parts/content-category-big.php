@@ -7,7 +7,18 @@
             ?>
             </a>
             <div class="card-body px-0">
-                <div class="category-type">ข่าววงการเกม</div>
+                <?php 
+                    $primary_term_id = yoast_get_primary_term_id('category');
+                    $postTerm = get_term( $primary_term_id );
+                    if ( $postTerm && ! is_wp_error( $postTerm ) ) { 
+                ?>
+                    <a href="<?= esc_url( get_term_link( $postTerm->term_id ) )?>" class="category-type"><?= $postTerm->name;?></a>
+                <?php } 
+                    elseif(is_wp_error( $postTerm )) {
+                    $get_cat = get_the_category();
+                ?>
+                    <a href="<?=  esc_url( get_term_link( $get_cat[0]->term_id ) )?>" class="category-type"><?= $get_cat[0]->name;?></a>
+                <?php } ?>
                 <a href="<?= esc_url(get_permalink()); ?>" class="card-link">
                     <h3 class="card-title mb-1"><?= get_the_title();?></h3>
                 </a>

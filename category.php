@@ -42,7 +42,18 @@ get_header();
                     ?>
 						<div class="top-header px-3 py-3">
                             <div class="category-post">
-                                <div class="category-post-item"><?=single_cat_title()?></div>
+                                <?php 
+                                    $primary_term_id = yoast_get_primary_term_id('category');
+                                    $postTerm = get_term( $primary_term_id );
+                                    if ( $postTerm && ! is_wp_error( $postTerm ) ) { 
+                                ?>
+                                    <div class="category-post-item"><?= $postTerm->name;?></div>
+                                <?php } 
+                                    elseif(is_wp_error( $postTerm )) {
+                                    $get_cat = get_the_category();
+                                ?>
+                                    <div class="category-post-item"><?= $get_cat[0]->name;?></div>
+                                <?php } ?>
                             </div>
 							<h3 class="top-title mb-0"><?= get_the_title();?></h3>
                             <div class="top-date"><?= get_the_date(); ?></div>

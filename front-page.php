@@ -295,10 +295,19 @@ get_header();
 												<div class="flex-center flex-column flex-sm-row mb-2">
 													<div class="ent-info mr-1">
 														<?php 
-															$parent_categories = get_the_category();
-
+															$primary_term_id = yoast_get_primary_term_id('category');
+															$postTerm = get_term( $primary_term_id );
+															if ( $postTerm && ! is_wp_error( $postTerm ) ) { 
 														?>
-															<span class="cate"><?= get_cat_name($parent_categories[0]->category_parent) ?></span>
+															<span class="cate"><?= $postTerm->name;?></span>
+														
+														<?php } 
+															elseif(is_wp_error( $postTerm )) {
+                        									$get_cat = get_the_category();
+															print_r($get_cat);
+														?>
+															<span class="cate"><?= $get_cat[0]->name; ?></span>
+														<?php } ?>
 															<span>|</span>
 													</div>
 													<span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
