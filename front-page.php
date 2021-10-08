@@ -304,7 +304,6 @@ get_header();
 														<?php } 
 															elseif(is_wp_error( $postTerm )) {
                         									$get_cat = get_the_category();
-															print_r($get_cat);
 														?>
 															<span class="cate"><?= $get_cat[0]->name; ?></span>
 														<?php } ?>

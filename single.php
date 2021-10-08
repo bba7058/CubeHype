@@ -44,7 +44,7 @@ get_header();
 								</div>
 							</div>
 						</div>
-						<div class="single-content border-bottom pb-3">
+						<div class="single-content border-bottom">
 							<?php the_content() ?>
 							<?php
 								$tags = get_the_tags();
@@ -66,108 +66,6 @@ get_header();
 								</div>
 							</div>
 							<?php endif; ?>
-						</div>
-						<div class="social-share border-bottom">
-							<a href="#" class="social-list flex-center facebook">
-								<i class="fab fa-facebook-f mr-2" aria-hidden="true"></i>
-								FACEBOOK
-							</a>
-							<a href="#" class="social-list flex-center twitter">
-								<i class="fab fa-twitter mr-2" aria-hidden="true"></i>
-								TWITTER
-							</a>
-							<a href="#" class="social-list flex-center line">
-								<i class="fab fa-line mr-2" aria-hidden="true"></i>
-								LINE
-							</a>
-						</div>
-						<div class="related-wrapper">
-							<div class="related-header">
-								<div class="header-title">
-									เรื่องราวอื่นๆ ที่น่าสนใจ
-								</div>
-								<div class="line-right"></div>	
-							</div>
-							<div class="row mx-0">
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 related-box">
-										<a href="#" class="related-link-img">
-											<img class="img-related" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/clem-onojeghuo-RozQ_5_4RNs-unsplash.jpg')?>" alt="">
-										</a>
-										<div class="card-body related-body">
-											<div class="related-category">อาหาร</div>
-											<a href="#" class="related-title-link">
-												<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 related-box">
-										<a href="#" class="related-link-img">
-											<img class="img-related" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/jezael-melgoza-43rUwqdoD1g-unsplash.jpg')?>" alt="">
-										</a>
-										<div class="card-body related-body">
-											<div class="related-category">อาหาร</div>
-											<a href="#" class="related-title-link">
-												<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 related-box">
-										<a href="#" class="related-link-img">
-											<img class="img-related" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/myke-simon-atsUqIm3wxo-unsplash.jpg')?>" alt="">
-										</a>
-										<div class="card-body related-body">
-											<div class="related-category">อาหาร</div>
-											<a href="#" class="related-title-link">
-												<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 related-box">
-										<a href="#" class="related-link-img">
-											<img class="img-related" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/samuel-wong-4R1wcvJb40c-unsplash.jpg')?>" alt="">
-										</a>
-										<div class="card-body related-body">
-											<div class="related-category">อาหาร</div>
-											<a href="#" class="related-title-link">
-												<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 related-box">
-										<a href="#" class="related-link-img">
-											<img class="img-related" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/gabriel-voltz-xCr7cmReH3Y-unsplash.jpg')?>" alt="">
-										</a>
-										<div class="card-body related-body">
-											<div class="related-category">อาหาร</div>
-											<a href="#" class="related-title-link">
-												<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 related-box">
-										<a href="#" class="related-link-img">
-											<img class="img-related" src="<?= esc_url(get_template_directory_uri() .'/assets/img/blog/jingwei-ke-E7w_Ti4BSSs-unsplash.jpg')?>" alt="">
-										</a>
-										<div class="card-body related-body">
-											<div class="related-category">อาหาร</div>
-											<a href="#" class="related-title-link">
-												<h3 class="card-title">20 รายละเอียดเล็ก ๆ ในหนังดิสนีย์ ที่คนส่วนมากไม่เคยสังเกตเห็น</h3>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</section>
 				<?php endwhile;  ?>

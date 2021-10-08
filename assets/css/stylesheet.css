@@ -1184,52 +1184,27 @@ a:hover{
     background-color: #26CBFF;
 }
 
-.single-post .social-share{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1.5rem 0rem;
+div.sharedaddy h3.sd-title {
+    display: block !important;
+    font-size: 15px !important;
 }
 
-.single-post .social-share .social-list{
-    padding: 10px 20px;
-    color: #fff;
-    font-weight: 500;
-    transition: all 0.4s ease-out;
-    min-width: 160px;
-    margin: 5px 0px;
+.sd-content ul li {
+    margin: 0 25px 5px 0 !important;
 }
 
-.single-post .social-share .social-list.facebook{
-    background-color: #3a579a;   
+.sd-social-icon .sd-content ul li[class*='share-'] a, 
+.sd-social-icon .sd-content ul li[class*='share-'] a:hover, 
+.sd-social-icon .sd-content ul li[class*='share-'] div.option a {
+    padding: 10px !important;
 }
 
-.single-post .social-share .social-list.facebook:hover{
-    background-color: #2f477a;   
-}
-
-.single-post .social-share .social-list.twitter{
-    background-color: #1DA1F2;   
-}
-
-.single-post .social-share .social-list.twitter:hover{
-    background-color: #14171A;   
-}
-
-.single-post .social-share .social-list.line{
-    background-color: #00c300;   
-}
-
-.single-post .social-share .social-list.line:hover{
-    background-color: #00A700;   
-}
-
-.single-post .social-share .social-list i{
-    font-size: 18px;
+.sd-content ul li a.sd-button:before {
+    font: normal 25px/1 'social-logos' !important;
 }
 
 .related-wrapper{
-    padding: 2rem 0rem;
+    padding-top: 2rem;
 }
 
 .related-wrapper .related-header{
@@ -1238,6 +1213,11 @@ a:hover{
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 15px;
+}
+
+.related-wrapper .related-header .header-title{
+    font-size: 1.25rem;
+    padding: 0;
 }
 
 .related-wrapper .line-right{
