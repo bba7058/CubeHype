@@ -70,14 +70,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-
-		<div class="search-box">
-			<button type="button" class="search-icon ml-0">
-				<i class="fa fa-search"></i>
-			</button>
-			<input class="form-control input-search" type="text" placeholder="ค้นหา...">
-		</div>
-	
+		<?php get_search_form() ?>
 
 		<form class="form-inline my-2 my-lg-0 d-none">
 			

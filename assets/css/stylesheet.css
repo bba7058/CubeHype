@@ -1273,6 +1273,7 @@ div.sharedaddy h3.sd-title {
 .related-body .related-category{
     color: #26CBFF;
     margin-bottom: 0.25rem;
+    font-weight: 500;
 }
 
 .related-body .related-title-link:hover .card-title{
