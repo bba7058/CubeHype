@@ -70,7 +70,7 @@ jQuery(function ($){
                     currentScroll = $(window).scrollTop(); 
                     currentScrollbottom = $(window).scrollTop() + $(window).height();  
                     content_height = $(window).height() + $('.content').height() -202; 
-                    inner_content_height = $('#inner-content').outerHeight(true) + $('.btn-load').outerHeight(true);
+                    inner_content_height = $('#inner-content').outerHeight(true);
 
                     if($(window).width() >= 992) {
                         if(inner_content_height >= sidebar) {
@@ -99,34 +99,93 @@ jQuery(function ($){
            })
     })
 
-        // scroll
-        $(window).scroll(function() {                  
-             
-            var currentScroll = $(window).scrollTop(); 
-            var currentScrollbottom = $(window).scrollTop() + $(window).height(); 
-    
-            if($(window).width() >= 992) {
-                if(inner_content_height >= sidebar) {
-                    if (currentScroll >= fixTop) {          
-                        $('.popular-position').addClass('scroll-fixed');
-                    } else {                              
-                        $('.popular-position').removeClass('scroll-fixed');
+    // btn more post category
+    $('#btn-more-post-category').on('click', function(){
+        var button = $(this);
+        var data = {
+                'action': 'loadmore-category',
+                'offset' : (script_object.page * 9) + 2,
+                'cat' : script_object.cat
+            };
+
+            $.ajax({
+                url: script_object.ajaxurl,
+                data : data,
+                type:'POST',
+                beforeSend : function ( xhr ) {
+                button.html('Loading... <i class="fas fa-sync-alt ml-1"></i>'); // change the button text, you can also add a preloader image
+            },
+            })
+            .done(function(response) {
+                if(response) { 
+                    button.html( 'LOAD MORE <i class="fas fa-sync-alt ml-1"></i>' );
+                    script_object.page++;
+                    $('#post-content').append(response);
+
+                    //position of content_height
+                    currentScroll = $(window).scrollTop(); 
+                    currentScrollbottom = $(window).scrollTop() + $(window).height();  
+                    content_height = $(window).height() + $('.content').height() -202; 
+                    inner_content_height = $('#inner-content').outerHeight(true);
+                    console.log('inner_content_height = '+ inner_content_height);
+
+                    if($(window).width() >= 992) {
+                        if(inner_content_height >= sidebar) {
+                            if (currentScroll >= fixTop) {          
+                                $('.popular-position').addClass('scroll-fixed');
+                            } else {                              
+                                $('.popular-position').removeClass('scroll-fixed');
+                            }
+
+                            if (currentScrollbottom >= content_height) { 
+                                $('.popular-position').addClass('non-fixed');         
+                                $('.popular-position').css({
+                                    'top': content_height - $(window).height() - sum_height + 'px'
+                                });
+                            } else {                              
+                                $('.popular-position').removeClass('non-fixed');
+                                $('.popular-position').css({
+                                    'top': '0'
+                                });
+                            }
+                        }
                     }
-                    
-                    if (currentScrollbottom >= content_height) { 
-                        $('.popular-position').addClass('non-fixed');         
-                        $('.popular-position').css({
-                            'top': content_height - $(window).height() - sum_height + 'px'
-                        });
-                    } else {                              
-                        $('.popular-position').removeClass('non-fixed');
-                        $('.popular-position').css({
-                            'top': '0'
-                        });
-                    }
+                } else {
+                    button.remove(); // if no data, remove the button as well
+                }
+            })
+    })
+
+    // scroll
+    $(window).scroll(function() {                  
+            
+        var currentScroll = $(window).scrollTop(); 
+        var currentScrollbottom = $(window).scrollTop() + $(window).height(); 
+
+        if($(window).width() >= 992) {
+            if(inner_content_height >= sidebar) {
+                if (currentScroll >= fixTop) {          
+                    $('.popular-position').addClass('scroll-fixed');
+                } else {                              
+                    $('.popular-position').removeClass('scroll-fixed');
                 }
                 
+                if (currentScrollbottom >= content_height) { 
+                    $('.popular-position').addClass('non-fixed');         
+                    $('.popular-position').css({
+                        'top': content_height - $(window).height() - sum_height + 'px'
+                    });
+                } else {                              
+                    $('.popular-position').removeClass('non-fixed');
+                    $('.popular-position').css({
+                        'top': '0'
+                    });
+                }
             }
-        });
+            
+        }
+    });
+
+    
 
 });

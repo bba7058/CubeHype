@@ -66,7 +66,7 @@ get_header();
                                     'offset' => 2,
                                 ));
                             ?>
-                                <div class="row">
+                                <div class="row" id="post-content">
                                 <?php 
                                     $i = 1;
                                     while( $post_category->have_posts() ) : 
@@ -82,11 +82,12 @@ get_header();
                                     
                                     $i++;
                             
-                            endwhile; ?>
+                                    endwhile; 
+                                ?>
                             </div>
                         </section>
                         <div class="btn-load">
-                            <button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+                            <button tyle="button" class="btn btn-more" id="btn-more-post-category">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
                         </div>
                     </div>   
 				</div>

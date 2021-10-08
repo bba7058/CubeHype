@@ -154,6 +154,7 @@ function demo_scripts() {
 
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'cat' => single_cat_title('', false),
 	) );
 
 
@@ -188,6 +189,43 @@ function web_loadmore_ajax_handler(){
  
 add_action('wp_ajax_loadmore', 'web_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'web_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+function loadmore_category(){
+ 
+	$offset = $_POST["offset"];
+	$category = $_POST["cat"];
+
+	$args = array(
+        'post_type' => 'post',
+		'status' => 'publish',
+		'posts_per_page' => 9,
+		'offset' => $offset,
+		'category_name' => $category,
+     );
+ 
+	$post = new WP_Query( $args );
+ 
+		$i = 1;
+		while($post->have_posts() ): 
+			$post->the_post();
+
+			if($i % 3 != 0) {
+				get_template_part( 'template-parts/content-category');
+				
+			}
+			elseif ($i % 3 == 0){
+				get_template_part( 'template-parts/content-category-big');
+			}
+			
+			$i++;
+		endwhile;
+ 
+
+	die; 
+}
+ 
+add_action('wp_ajax_loadmore-category', 'loadmore_category'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore-category', 'loadmore_category'); // wp_ajax_nopriv_{action}
 
 
 /**
