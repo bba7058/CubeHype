@@ -410,9 +410,11 @@ get_header();
 									</div>
 									<?php endwhile; ?>
 							</div>
-							<div class="btn-load">
-								<button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
-							</div>
+							<?php if($num_page > 1) { ?>
+								<div class="btn-load">
+									<button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+								</div>
+							<?php } ?>
 						</section>
 					</div>
 				</div>

@@ -91,9 +91,11 @@ get_header();
                                 ?>
                             </div>
                         </section>
-                        <div class="btn-load">
-                            <button tyle="button" class="btn btn-more" id="btn-more-post-category">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
-                        </div>
+                        <?php if($num_page > 1) { ?>
+                            <div class="btn-load">
+                                <button tyle="button" class="btn btn-more" id="btn-more-post-category">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+                            </div>
+                        <?php } ?>
                     </div>   
 				</div>
 				<?php get_sidebar(); ?>
