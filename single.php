@@ -19,7 +19,7 @@ get_header();
 			<div class="row">
 				<div class="col-lg-8">
 				<?php while ( have_posts() ) : the_post(); ?>
-					<section class="single-post">
+					<section class="single-post" id="inner-content">
 						<img src="<?= esc_url(the_post_thumbnail_url())?>" class="img-featured-post" alt="">
 						<?php
 						if ( function_exists('yoast_breadcrumb') ) {

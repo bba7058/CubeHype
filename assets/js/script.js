@@ -2,30 +2,34 @@ jQuery(function ($){
     var fixTop = $('.popular-position').offset().top +(100);  
     var content_height = $(window).height() + $('.content').height() -202;
 
-    var navbar_height = $('.custom-navbar').outerHeight(true);
-    var sectop_height = $('#preview').outerHeight(true);
-    var sum_height= navbar_height + sectop_height;
+    var sum_height= $('.custom-navbar').outerHeight(true) + $('#preview').outerHeight(true);
 
     var scrollpos = $(window).scrollTop(); 
     var scrollbottom = $(window).scrollTop() + $(window).height(); 
 
+    var inner_content_height = $('#inner-content').outerHeight(true);
+    var sidebar = $('.sidebar').outerHeight(true);
+
     // check when loaded
     if($(window).width() >= 992) {
-        if (scrollpos >= fixTop) {          
-            $('.popular-position').addClass('scroll-fixed');
-        } else {                              
-            $('.popular-position').removeClass('scroll-fixed');
-        }
-        if (scrollbottom >= content_height) {          
-            $('.popular-position').addClass('non-fixed');
-            $('.popular-position').css({
-                'top': content_height - $(window).height() - sum_height + 'px'
-            });
-        } else {                              
-            $('.popular-position').removeClass('non-fixed');
-            $('.popular-position').css({
-                'top': '0'
-            });
+        if(inner_content_height >= sidebar) {
+            if (scrollpos >= fixTop) {          
+                $('.popular-position').addClass('scroll-fixed');
+            } else {                              
+                $('.popular-position').removeClass('scroll-fixed');
+            }
+            
+            if (scrollbottom >= content_height) {          
+                $('.popular-position').addClass('non-fixed');
+                $('.popular-position').css({
+                    'top': content_height - $(window).height() - sum_height + 'px'
+                });
+            } else {                              
+                $('.popular-position').removeClass('non-fixed');
+                $('.popular-position').css({
+                    'top': '0'
+                });
+            }
         }
     }
 
@@ -66,24 +70,27 @@ jQuery(function ($){
                     currentScroll = $(window).scrollTop(); 
                     currentScrollbottom = $(window).scrollTop() + $(window).height();  
                     content_height = $(window).height() + $('.content').height() -202; 
+                    inner_content_height = $('#inner-content').outerHeight(true) + $('.btn-load').outerHeight(true);
 
                     if($(window).width() >= 992) {
-                        if (currentScroll >= fixTop) {          
-                            $('.popular-position').addClass('scroll-fixed');
-                        } else {                              
-                            $('.popular-position').removeClass('scroll-fixed');
-                        }
+                        if(inner_content_height >= sidebar) {
+                            if (currentScroll >= fixTop) {          
+                                $('.popular-position').addClass('scroll-fixed');
+                            } else {                              
+                                $('.popular-position').removeClass('scroll-fixed');
+                            }
 
-                        if (currentScrollbottom >= content_height) { 
-                            $('.popular-position').addClass('non-fixed');         
-                            $('.popular-position').css({
-                                'top': content_height - $(window).height() - sum_height + 'px'
-                            });
-                        } else {                              
-                            $('.popular-position').removeClass('non-fixed');
-                            $('.popular-position').css({
-                                'top': '0'
-                            });
+                            if (currentScrollbottom >= content_height) { 
+                                $('.popular-position').addClass('non-fixed');         
+                                $('.popular-position').css({
+                                    'top': content_height - $(window).height() - sum_height + 'px'
+                                });
+                            } else {                              
+                                $('.popular-position').removeClass('non-fixed');
+                                $('.popular-position').css({
+                                    'top': '0'
+                                });
+                            }
                         }
                     }
                 } else {
@@ -99,23 +106,26 @@ jQuery(function ($){
             var currentScrollbottom = $(window).scrollTop() + $(window).height(); 
     
             if($(window).width() >= 992) {
-                if (currentScroll >= fixTop) {          
-                    $('.popular-position').addClass('scroll-fixed');
-                } else {                              
-                    $('.popular-position').removeClass('scroll-fixed');
+                if(inner_content_height >= sidebar) {
+                    if (currentScroll >= fixTop) {          
+                        $('.popular-position').addClass('scroll-fixed');
+                    } else {                              
+                        $('.popular-position').removeClass('scroll-fixed');
+                    }
+                    
+                    if (currentScrollbottom >= content_height) { 
+                        $('.popular-position').addClass('non-fixed');         
+                        $('.popular-position').css({
+                            'top': content_height - $(window).height() - sum_height + 'px'
+                        });
+                    } else {                              
+                        $('.popular-position').removeClass('non-fixed');
+                        $('.popular-position').css({
+                            'top': '0'
+                        });
+                    }
                 }
-    
-                if (currentScrollbottom >= content_height) { 
-                    $('.popular-position').addClass('non-fixed');         
-                    $('.popular-position').css({
-                        'top': content_height - $(window).height() - sum_height + 'px'
-                    });
-                } else {                              
-                    $('.popular-position').removeClass('non-fixed');
-                    $('.popular-position').css({
-                        'top': '0'
-                    });
-                }
+                
             }
         });
 

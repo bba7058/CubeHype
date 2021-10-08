@@ -135,113 +135,27 @@ get_header();
 		<div class="content pb-5">
 			<div class="row">
 				<div class="col-lg-8">
-					<section class="section-lifestyle">
-						<div class="header-category">
-							<div class="category-title life">Lifestyle</div>
-						</div>
-						<div class="row">
-						<?php     
-							$lifestyle_first = new WP_Query( array( 
-								'post_type' => 'post',
-								'post_status' => 'publish',
-								'category_name' => 'Lifestyle',
-							));
-
-							if ( $lifestyle_first->have_posts() ) : 
-								$lifestyle_first->the_post();
-						?>
-							<div class="col-md-6">
-								<div class="card border-0 first-item mb-3">
-									<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
-										<?= the_post_thumbnail( 'large',
-												array('class' => 'card-img-top img-lifestyle')
-											); 
-										?>
-									</a>
-										<div class="card-body px-0">
-										<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
-											<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-										</a>
-										<div class="info-post">
-											<div class="post-author">
-												<i class="fa fa-user mr-2" aria-hidden="true"></i>
-												<?= get_the_author(); ?>
-											</div>
-											<span class="mx-3">|</span>
-											<div class="post-date">
-												<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-												<?= get_the_date(); ?>
-											</div>
-										</div>
-										<p class="card-text"><?= get_the_excerpt(); ?></p>
-									</div>
-								</div>
+					<div id="inner-content">
+						<section class="section-lifestyle">
+							<div class="header-category">
+								<div class="category-title life">Lifestyle</div>
 							</div>
-						<?php endif; ?>
-
-							<div class="col-md-6">
-								<?php     
-									$lifestyle_post = new WP_Query( array( 
-										'post_type' => 'post',
-										'post_status' => 'publish',
-										'category_name' => 'Lifestyle',
-										'posts_per_page' => 4,
-										'offset' => 1
-									));
-
-									while( $lifestyle_post->have_posts() ) : 
-										$lifestyle_post->the_post();
-								?>
-									<div class="card mb-3 card-items" style="max-width: 540px;">
-										<div class="row no-gutters">
-											<div class="col-4">
-												<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
-													<?= the_post_thumbnail( 'medium',
-															array('class' => 'img-life')
-														); 
-													?>
-												</a>	
-											</div>
-											<div class="col-8">
-												<div class="card-body py-1 px-2">
-													<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
-														<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-													</a>
-													<div class="info-post">
-														<div class="post-date">
-															<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-															<?= get_the_date(); ?>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<?php endwhile; ?>
-							</div>
-						</div>
-					</section>
-					<section class="section-tech">
-						<div class="header-category">
-							<div class="category-title tech">Technology</div>
-						</div>
-						<div class="row">
+							<div class="row">
 							<?php     
-								$tech_post = new WP_Query( array( 
+								$lifestyle_first = new WP_Query( array( 
 									'post_type' => 'post',
 									'post_status' => 'publish',
-									'category_name' => 'Technology',
-									'posts_per_page' => 4,
+									'category_name' => 'Lifestyle',
 								));
 
-								while( $tech_post->have_posts() ) : 
-									$tech_post->the_post();
+								if ( $lifestyle_first->have_posts() ) : 
+									$lifestyle_first->the_post();
 							?>
-								<div class="col-6">
-									<div class="card border-0 tech-item mb-3">
+								<div class="col-md-6">
+									<div class="card border-0 first-item mb-3">
 										<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
 											<?= the_post_thumbnail( 'large',
-													array('class' => 'card-img-top img-tech')
+													array('class' => 'card-img-top img-lifestyle')
 												); 
 											?>
 										</a>
@@ -264,151 +178,239 @@ get_header();
 										</div>
 									</div>
 								</div>
-							<?php endwhile; ?>
-						</div>
-					</section>
-					<section class="section-ent">
-						<div class="header-category">
-							<div class="category-title ent">Entertainment</div>
-						</div>
-						<div class="row mx-auto">
-							<?php     
-								$ent_post = new WP_Query( array( 
-									'post_type' => 'post',
-									'post_status' => 'publish',
-									'category_name' => 'Entertainment',
-									'posts_per_page' => 4,
-								));
+							<?php endif; ?>
 
-								while( $ent_post->have_posts() ) : 
-									$ent_post->the_post();
-							?>
-							<div class="col-6 ent-wrapper">
-								<a href="<?= esc_url(get_permalink()); ?>" class="ent-list">
-									<?= the_post_thumbnail( 'large',
-											array('class' => 'img-cover')
-										); 
+								<div class="col-md-6">
+									<?php     
+										$lifestyle_post = new WP_Query( array( 
+											'post_type' => 'post',
+											'post_status' => 'publish',
+											'category_name' => 'Lifestyle',
+											'posts_per_page' => 4,
+											'offset' => 1
+										));
+
+										while( $lifestyle_post->have_posts() ) : 
+											$lifestyle_post->the_post();
 									?>
-									<div class="text-overlay flex-center">
-										<div class="text-wrapper">
-											<div class="flex-center flex-column flex-sm-row mb-2">
-												<div class="ent-info mr-1">
-													<?php 
-														$parent_categories = get_the_category();
-
-													 ?>
-														<span class="cate"><?= get_cat_name($parent_categories[0]->category_parent) ?></span>
-														<span>|</span>
+										<div class="card mb-3 card-items" style="max-width: 540px;">
+											<div class="row no-gutters">
+												<div class="col-4">
+													<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
+														<?= the_post_thumbnail( 'medium',
+																array('class' => 'img-life')
+															); 
+														?>
+													</a>	
 												</div>
-												<span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
-											</div>
-											<h3 class="ent-title"><?= get_the_title();?></h3>
-										</div>
-									</div>		
-								</a>
-							</div>
-							<?php endwhile; ?>
-						</div>
-					</section>
-					<section class="section-ww">
-						<div class="header-category">
-							<div class="category-title ww">Worldwide</div>
-						</div>
-						<div class="row mx-auto">
-							<?php     
-								$ww_post = new WP_Query( array( 
-									'post_type' => 'post',
-									'post_status' => 'publish',
-									'category_name' => 'Worldwide',
-									'posts_per_page' => 6,
-								));
-
-								while( $ww_post->have_posts() ) : 
-									$ww_post->the_post();
-							?>
-								<div class="col-6 col-md-4 px-1">
-									<div class="card border-0 ww-wrapper">
-										<a href="<?= esc_url(get_permalink()); ?>" class="ww-link-img">
-											<?= the_post_thumbnail( 'medium',
-													array('class' => 'img-ww')
-												); 
-											?>
-										</a>
-										<div class="card-body ww-body">
-											<a href="<?= esc_url(get_permalink()); ?>" class="ww-title-link">
-												<h3 class="card-title"><?= get_the_title();?></h3>
-											</a>
-											<div class="info-post">
-												<div class="post-author">
-													<i class="fa fa-user mr-2" aria-hidden="true"></i>
-													<?= get_the_author(); ?>
-												</div>
-												<span class="mx-3">|</span>
-												<div class="post-date">
-													<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-													<?= get_the_date(); ?>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<?php endwhile; ?>
-						</div>
-					</section>
-					<section class="section-lastest">
-						<div class="header-category">
-							<div class="category-title lastest">Latest Post</div>
-						</div>
-						<div class="row mx-auto" id="lastest-post">
-							<?php     
-								$lastest_post = new WP_Query( array( 
-									'post_type' => 'post',
-									'post_status' => 'publish',
-									'posts_per_page' => 4,
-								));
-
-								while( $lastest_post->have_posts() ) : 
-									$lastest_post->the_post();
-							?>
-								<div class="card mb-3 lastest-items">
-									<div class="row no-gutters">
-										<div class="col-4">
-											<a href="<?= esc_url(get_permalink()); ?>" class="lastest-link-img">
-												<?= the_post_thumbnail( 'medium',
-														array('class' => 'img-lastest')
-													); 
-												?>
-											</a>	
-										</div>
-										<div class="col-8">
-											<div class="card-body py-1 px-3">
-												<div class="inner-body-wrapper">
-													<a href="<?= esc_url(get_permalink()); ?>" class="lastest-link">
-														<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-													</a>
-													<div class="info-post">
-														<div class="post-author">
-															<i class="fa fa-user mr-2" aria-hidden="true"></i>
-															<?= get_the_author(); ?>
-														</div>
-														<span class="mx-3">|</span>
-														<div class="post-date">
-															<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-															<?= get_the_date(); ?>
+												<div class="col-8">
+													<div class="card-body py-1 px-2">
+														<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
+															<h3 class="card-title mb-1"><?= get_the_title();?></h3>
+														</a>
+														<div class="info-post">
+															<div class="post-date">
+																<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+																<?= get_the_date(); ?>
+															</div>
 														</div>
 													</div>
-													<p class="card-text"><?= get_the_excerpt(); ?></p>
-												</div>	
+												</div>
+											</div>
+										</div>
+										<?php endwhile; ?>
+								</div>
+							</div>
+						</section>
+						<section class="section-tech">
+							<div class="header-category">
+								<div class="category-title tech">Technology</div>
+							</div>
+							<div class="row">
+								<?php     
+									$tech_post = new WP_Query( array( 
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'category_name' => 'Technology',
+										'posts_per_page' => 4,
+									));
+
+									while( $tech_post->have_posts() ) : 
+										$tech_post->the_post();
+								?>
+									<div class="col-6">
+										<div class="card border-0 tech-item mb-3">
+											<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
+												<?= the_post_thumbnail( 'large',
+														array('class' => 'card-img-top img-tech')
+													); 
+												?>
+											</a>
+												<div class="card-body px-0">
+												<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
+													<h3 class="card-title mb-1"><?= get_the_title();?></h3>
+												</a>
+												<div class="info-post">
+													<div class="post-author">
+														<i class="fa fa-user mr-2" aria-hidden="true"></i>
+														<?= get_the_author(); ?>
+													</div>
+													<span class="mx-3">|</span>
+													<div class="post-date">
+														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+														<?= get_the_date(); ?>
+													</div>
+												</div>
+												<p class="card-text"><?= get_the_excerpt(); ?></p>
 											</div>
 										</div>
 									</div>
+								<?php endwhile; ?>
+							</div>
+						</section>
+						<section class="section-ent">
+							<div class="header-category">
+								<div class="category-title ent">Entertainment</div>
+							</div>
+							<div class="row mx-auto">
+								<?php     
+									$ent_post = new WP_Query( array( 
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'category_name' => 'Entertainment',
+										'posts_per_page' => 4,
+									));
+
+									while( $ent_post->have_posts() ) : 
+										$ent_post->the_post();
+								?>
+								<div class="col-6 ent-wrapper">
+									<a href="<?= esc_url(get_permalink()); ?>" class="ent-list">
+										<?= the_post_thumbnail( 'large',
+												array('class' => 'img-cover')
+											); 
+										?>
+										<div class="text-overlay flex-center">
+											<div class="text-wrapper">
+												<div class="flex-center flex-column flex-sm-row mb-2">
+													<div class="ent-info mr-1">
+														<?php 
+															$parent_categories = get_the_category();
+
+														?>
+															<span class="cate"><?= get_cat_name($parent_categories[0]->category_parent) ?></span>
+															<span>|</span>
+													</div>
+													<span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
+												</div>
+												<h3 class="ent-title"><?= get_the_title();?></h3>
+											</div>
+										</div>		
+									</a>
 								</div>
 								<?php endwhile; ?>
-						</div>
-						<div class="btn-load">
-							<button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
-						</div>
-					</section>
+							</div>
+						</section>
+						<section class="section-ww">
+							<div class="header-category">
+								<div class="category-title ww">Worldwide</div>
+							</div>
+							<div class="row mx-auto">
+								<?php     
+									$ww_post = new WP_Query( array( 
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'category_name' => 'Worldwide',
+										'posts_per_page' => 6,
+									));
+
+									while( $ww_post->have_posts() ) : 
+										$ww_post->the_post();
+								?>
+									<div class="col-6 col-md-4 px-1">
+										<div class="card border-0 ww-wrapper">
+											<a href="<?= esc_url(get_permalink()); ?>" class="ww-link-img">
+												<?= the_post_thumbnail( 'medium',
+														array('class' => 'img-ww')
+													); 
+												?>
+											</a>
+											<div class="card-body ww-body">
+												<a href="<?= esc_url(get_permalink()); ?>" class="ww-title-link">
+													<h3 class="card-title"><?= get_the_title();?></h3>
+												</a>
+												<div class="info-post">
+													<div class="post-author">
+														<i class="fa fa-user mr-2" aria-hidden="true"></i>
+														<?= get_the_author(); ?>
+													</div>
+													<span class="mx-3">|</span>
+													<div class="post-date">
+														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+														<?= get_the_date(); ?>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php endwhile; ?>
+							</div>
+						</section>
+						<section class="section-lastest">
+							<div class="header-category">
+								<div class="category-title lastest">Latest Post</div>
+							</div>
+							<div class="row mx-auto" id="lastest-post">
+								<?php     
+									$lastest_post = new WP_Query( array( 
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'posts_per_page' => 4,
+									));
+
+									while( $lastest_post->have_posts() ) : 
+										$lastest_post->the_post();
+								?>
+									<div class="card mb-3 lastest-items">
+										<div class="row no-gutters">
+											<div class="col-4">
+												<a href="<?= esc_url(get_permalink()); ?>" class="lastest-link-img">
+													<?= the_post_thumbnail( 'medium',
+															array('class' => 'img-lastest')
+														); 
+													?>
+												</a>	
+											</div>
+											<div class="col-8">
+												<div class="card-body py-1 px-3">
+													<div class="inner-body-wrapper">
+														<a href="<?= esc_url(get_permalink()); ?>" class="lastest-link">
+															<h3 class="card-title mb-1"><?= get_the_title();?></h3>
+														</a>
+														<div class="info-post">
+															<div class="post-author">
+																<i class="fa fa-user mr-2" aria-hidden="true"></i>
+																<?= get_the_author(); ?>
+															</div>
+															<span class="mx-3">|</span>
+															<div class="post-date">
+																<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
+																<?= get_the_date(); ?>
+															</div>
+														</div>
+														<p class="card-text"><?= get_the_excerpt(); ?></p>
+													</div>	
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php endwhile; ?>
+							</div>
+							<div class="btn-load">
+								<button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+							</div>
+						</section>
+					</div>
 				</div>
 				<?php get_sidebar(); ?>
 			</div>

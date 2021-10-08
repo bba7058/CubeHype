@@ -55,38 +55,40 @@ get_header();
 		<div class="content pb-5">
 			<div class="row">
 				<div class="col-lg-8">
-					<section class="category-content">
-                    <?php     
-                        $post_category = new WP_Query( array( 
-                            'post_type'      => 'post',
-                            'post_status'    => 'publish',
-                            'category_name'  => single_cat_title('', false),
-                            'posts_per_page' => 9,
-                            'offset' => 2,
-                        ));
-                    ?>
-                            <div class="row">
-                            <?php 
-                                $i = 1;
-                                while( $post_category->have_posts() ) : 
-                                $post_category->the_post();
+                    <div id="inner-content">
+                        <section class="category-content">
+                            <?php     
+                                $post_category = new WP_Query( array( 
+                                    'post_type'      => 'post',
+                                    'post_status'    => 'publish',
+                                    'category_name'  => single_cat_title('', false),
+                                    'posts_per_page' => 9,
+                                    'offset' => 2,
+                                ));
+                            ?>
+                                <div class="row">
+                                <?php 
+                                    $i = 1;
+                                    while( $post_category->have_posts() ) : 
+                                    $post_category->the_post();
 
-                                if($i % 3 != 0) {
-                                    get_template_part( 'template-parts/content-category');
+                                    if($i % 3 != 0) {
+                                        get_template_part( 'template-parts/content-category');
+                                        
+                                    }
+                                    elseif ($i % 3 == 0){
+                                        get_template_part( 'template-parts/content-category-big');
+                                    }
                                     
-                                }
-                                elseif ($i % 3 == 0){
-                                    get_template_part( 'template-parts/content-category-big');
-                                }
-                                
-                                $i++;
-                           
-                           endwhile; ?>
-						</div>
-					</section>
-                    <div class="btn-load">
-                        <button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
-                    </div>
+                                    $i++;
+                            
+                            endwhile; ?>
+                            </div>
+                        </section>
+                        <div class="btn-load">
+                            <button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+                        </div>
+                    </div>   
 				</div>
 				<?php get_sidebar(); ?>
 			</div>
