@@ -303,6 +303,7 @@ function tag_after_post_content($content){
 			$content_2 = '</div></div>';
 			return $content.$values.$content_2;
 		}
+		return $content;
 		
 	}
 }
