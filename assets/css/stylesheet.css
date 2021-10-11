@@ -643,6 +643,7 @@ a:hover{
 
 .section-default .default-items{
     border: 0;
+    width: 100%;
 }
 
 .section-default .default-items .inner-body-wrapper {
