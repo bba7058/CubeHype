@@ -155,6 +155,7 @@ function demo_scripts() {
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'cat' => single_cat_title('', false),
+		'tag' => single_tag_title('', false),
 		'search' => get_query_var('s'),
 	) );
 
@@ -227,6 +228,34 @@ function loadmore_category(){
  
 add_action('wp_ajax_loadmore-category', 'loadmore_category'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore-category', 'loadmore_category'); // wp_ajax_nopriv_{action}
+
+
+function loadmore_tag(){
+ 
+	$offset = $_POST["offset"];
+	$tag = $_POST["tag"];
+
+	$args = array(
+        'post_type' => 'post',
+		'status' => 'publish',
+		'posts_per_page' => 10,
+		'offset' => $offset,
+		'tag' => $tag,
+     );
+ 
+	$post = new WP_Query( $args );
+ 
+		while($post->have_posts() ): 
+			$post->the_post();
+
+			get_template_part( 'template-parts/content-default');
+			
+		endwhile;
+	die; 
+}
+ 
+add_action('wp_ajax_loadmore-tag', 'loadmore_tag'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore-tag', 'loadmore_tag'); // wp_ajax_nopriv_{action}
 
 function loadmore_search(){
  

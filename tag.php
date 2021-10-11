@@ -1,17 +1,16 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying Tags pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Demo
  */
 
 get_header();
 ?>
-
-	<!-- FB page embed -->
-	<div id="fb-root"></div>
+		<!-- FB page embed -->
+        <div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
 	<div class="container px-2">
@@ -21,7 +20,7 @@ get_header();
                 yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
             }
         ?>
-		<h1 class="page-header mb-0"><?= get_query_var('s');?></h1>
+		<h1 class="page-header mb-0">TAG: <?=single_tag_title()?></h1>
 		</section>
 		<div class="content pb-5">
 			<div class="row">
@@ -29,22 +28,21 @@ get_header();
 					<div id="inner-content">
 						<section class="section-default pt-2 border-top">
 							<?php 
-								$s = get_search_query();
-								$query_search = new WP_Query( array( 
-									's' 			=> $s,
+								$query_tag = new WP_Query( array( 
 									'post_type'    	=> 'post',
                     				'post_status'  	=> 'publish',
+                                    'tag'  => single_tag_title('', false),
 									'posts_per_page' => 10,
 					 			));
 
-								$num_page = $query_search->max_num_pages;
+								$num_page = $query_tag->max_num_pages;
 							?>
 								
 							<?php if ( have_posts() ) : ?>
-								<div class="row mx-auto" id="search-post" data-max="<?=$num_page?>">
+								<div class="row mx-auto" id="tag-post" data-max="<?=$num_page?>">
 									<?php
-										while( $query_search->have_posts() ) : 
-											$query_search->the_post();
+										while( $query_tag->have_posts() ) : 
+											$query_tag->the_post();
 									?>
 										<div class="card mb-3 default-items">
 											<div class="row no-gutters">
@@ -83,7 +81,7 @@ get_header();
 								</div>
 								<?php if($num_page > 1) { ?>
 									<div class="btn-load">
-										<button tyle="button" class="btn btn-more" id="btn-more-post-search">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+										<button tyle="button" class="btn btn-more" id="btn-more-post-tag">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
 									</div>
 								<?php } ?>
 								<?php
@@ -96,7 +94,6 @@ get_header();
 				<?php get_sidebar(); ?>
 			</div>
 		</div>
-
 
 <?php
 get_footer();

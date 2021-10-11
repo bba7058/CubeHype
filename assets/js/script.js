@@ -227,6 +227,68 @@ jQuery(function ($){
             })
     })
 
+
+        // btn more post tag
+        $('#btn-more-post-tag').on('click', function(){
+            var button = $(this);
+            var max_page = $('#tag-post').data('max');
+            var data = {
+                    'action': 'loadmore-tag',
+                    'offset' : script_object.page * 10,
+                    'tag' : script_object.tag
+                };
+    
+                $.ajax({
+                    url: script_object.ajaxurl,
+                    data : data,
+                    type:'POST',
+                    beforeSend : function ( xhr ) {
+                    button.html('Loading... <i class="fas fa-sync-alt ml-1"></i>'); // change the button text, you can also add a preloader image
+                },
+                })
+                .done(function(response) {
+                    if(response) { 
+                        button.html( 'LOAD MORE <i class="fas fa-sync-alt ml-1"></i>' );
+                        script_object.page++;
+                        $('#tag-post').append(response);
+    
+                        if(max_page == script_object.page){
+                            button.remove();
+                        }
+    
+                        //position of content_height
+                        currentScroll = $(window).scrollTop(); 
+                        currentScrollbottom = $(window).scrollTop() + $(window).height();  
+                        content_height = $(window).height() + $('.content').height() -202; 
+                        inner_content_height = $('#inner-content').outerHeight(true);
+    
+                        if($(window).width() >= 992) {
+                            if(inner_content_height >= sidebar) {
+                                if (currentScroll >= fixTop) {          
+                                    $('.popular-position').addClass('scroll-fixed');
+                                } else {                              
+                                    $('.popular-position').removeClass('scroll-fixed');
+                                }
+    
+                                if (currentScrollbottom >= content_height) { 
+                                    $('.popular-position').addClass('non-fixed');         
+                                    $('.popular-position').css({
+                                        'top': content_height - $(window).height() - sum_height + 'px'
+                                    });
+                                } else {                              
+                                    $('.popular-position').removeClass('non-fixed');
+                                    $('.popular-position').css({
+                                        'top': '0'
+                                    });
+                                }
+                            }
+                        }
+                    } else {
+                        button.remove(); // if no data, remove the button as well
+                    }
+                })
+        })
+
     // scroll
     $(window).scroll(function() {                  
             

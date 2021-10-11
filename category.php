@@ -20,7 +20,7 @@ get_header();
                 yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
             }
         ?>
-        <h1 class="category-header"><?=single_cat_title()?></h1>
+        <h1 class="page-header"><?=single_cat_title()?></h1>
             <?php     
                 $post_top_category = new WP_Query( array( 
                     'post_type'      => 'post',
