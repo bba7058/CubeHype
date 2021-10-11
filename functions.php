@@ -155,6 +155,7 @@ function demo_scripts() {
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'cat' => single_cat_title('', false),
+		'search' => get_query_var('s'),
 	) );
 
 
@@ -180,7 +181,7 @@ function web_loadmore_ajax_handler(){
  
 		while($post->have_posts() ): 
 			$post->the_post();
-			get_template_part( 'template-parts/content-lastest');
+			get_template_part( 'template-parts/content-default');
 		endwhile;
  
 
@@ -226,6 +227,32 @@ function loadmore_category(){
  
 add_action('wp_ajax_loadmore-category', 'loadmore_category'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore-category', 'loadmore_category'); // wp_ajax_nopriv_{action}
+
+function loadmore_search(){
+ 
+	$offset = $_POST["offset"];
+	$search = $_POST["s"];
+
+	$args = array(
+        'post_type' => 'post',
+		'status' => 'publish',
+		'posts_per_page' => 10,
+		'offset' => $offset,
+		's' => $search,
+     );
+ 
+	$post = new WP_Query( $args );
+		while($post->have_posts() ): 
+			$post->the_post();
+				get_template_part( 'template-parts/content-default');
+		endwhile;
+ 
+
+	die; 
+}
+ 
+add_action('wp_ajax_loadmore-search', 'loadmore_search'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore-search', 'loadmore_search'); // wp_ajax_nopriv_{action}
 
 
 /**

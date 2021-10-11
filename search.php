@@ -15,13 +15,14 @@ get_header();
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
 	<div class="container px-2">
-		<section class="section-top pt-3" id="preview">
+		<section class="section-top py-3" id="preview">
         <?php
             if ( function_exists('yoast_breadcrumb') ) {
                 yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
             }
         ?>
-		<h1 class="category-header"><?= get_query_var('s');?></h1>
+		<h1 class="category-header mb-0"><?= get_query_var('s');?></h1>
+		</section>
 		<div class="content pb-5">
 			<div class="row">
 				<div class="col-lg-8">
@@ -82,7 +83,7 @@ get_header();
 								</div>
 								<?php if($num_page > 1) { ?>
 									<div class="btn-load">
-										<button tyle="button" class="btn btn-more" id="btn-more-post">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
+										<button tyle="button" class="btn btn-more" id="btn-more-post-search">LOAD MORE <i class="fas fa-sync-alt ml-1"></i></button>
 									</div>
 								<?php } ?>
 								<?php
