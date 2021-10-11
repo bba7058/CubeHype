@@ -630,9 +630,9 @@ a:hover{
 
 
 
-/* ================================ SECTION LASTEST  =============================================== */
+/* ================================ SECTION DEFAULT  =============================================== */
 
-.section-lastest .header-category {
+.section-default .header-category {
     border-bottom: 2px solid #828282;
     margin-bottom: 15px;
 }
@@ -641,57 +641,57 @@ a:hover{
     background-color: #828282;
 }
 
-.section-lastest .lastest-items{
+.section-default .default-items{
     border: 0;
 }
 
-.section-lastest .lastest-items .inner-body-wrapper {
+.section-default .default-items .inner-body-wrapper {
     min-height: 170px;
 }
 
-.section-lastest .lastest-items .inner-body-wrapper {
+.section-default .default-items .inner-body-wrapper {
     border-bottom: 1px solid #D9D9D9;
     padding-bottom: 15px;
 }
 
-.section-lastest .lastest-link-img{
+.section-default .default-link-img{
     transition: all 0.4s ease-out;
 }
 
-.section-lastest .lastest-link-img:hover .img-lastest{
+.section-default .default-link-img:hover .img-default{
     filter: contrast(0.4);
 }
 
-.section-lastest .lastest-link-img .img-lastest{
+.section-default .default-link-img .img-default{
     height: 175px;
     width: 100%;
     object-fit: cover;
     transition: all 0.4s ease-out;
 }
 
-.section-lastest .lastest-link{
+.section-default .default-link{
     transition: all 0.4s ease-out;
 }
 
-.section-lastest .lastest-link:hover{
+.section-default .default-link:hover{
     text-decoration: underline;
     color: #1b1c1e;
     }
 
-.section-lastest .lastest-link:visited{
+.section-default .default-link:visited{
     color: #000;
 }
 
-.section-lastest .lastest-link .card-title{
+.section-default .default-link .card-title{
     font-size: 1.25rem;
     color: #1b1c1e;
 }
 
-.section-lastest .lastest-items .info-post{
+.section-default .default-items .info-post{
     font-size: 1.5rem;
 }
 
-.section-lastest .lastest-items .card-text{
+.section-default .default-items .card-text{
     font-size: 0.875rem;
     color: #7f7f7f;
     text-overflow: ellipsis;
@@ -728,7 +728,7 @@ a:hover{
 
 
 
-/* ================================ END SECTION LASTEST  =============================================== */
+/* ================================ END SECTION DEFAULT  =============================================== */
 
 
 
@@ -1465,11 +1465,11 @@ div.sharedaddy h3.sd-title {
 
     .section-ent .ent-title,
     .section-ww .ww-wrapper .ww-body .card-title,
-    .section-lastest .lastest-link .card-title {
+    .section-default .default-link .card-title {
         font-size: 1rem;
     }
 
-    .section-lastest .lastest-items .card-text {
+    .section-default .default-items .card-text {
         font-size: 0.75rem;
     }
 
