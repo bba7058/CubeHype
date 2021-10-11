@@ -46,26 +46,6 @@ get_header();
 						</div>
 						<div class="single-content border-bottom">
 							<?php the_content() ?>
-							<?php
-								$tags = get_the_tags();
-								if($tags):
-							?>
-							<div class="post-tag-box">
-								<div class="post-tag-label">
-									TAGS:
-								</div>
-								
-								<div class="post-tag-list-wrapper">
-									<?php
-										foreach($tags as $tag):
-									?>
-									<a href="<?= get_tag_link($tag->term_id );?>" class="post-tag-list">
-										<?= $tag->name;?>
-									</a>
-									<?php endforeach; ?>
-								</div>
-							</div>
-							<?php endif; ?>
 						</div>
 					</section>
 				<?php endwhile;  ?>

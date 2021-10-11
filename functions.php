@@ -255,6 +255,32 @@ add_action('wp_ajax_loadmore-search', 'loadmore_search'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore-search', 'loadmore_search'); // wp_ajax_nopriv_{action}
 
 
+// Add tag after post content
+function tag_after_post_content($content){
+	if (is_single()) {
+
+		$tags = get_the_tags();
+		if($tags){
+			$content .= '<div class="post-tag-box">
+								<div class="post-tag-label">
+									TAGS:
+								</div>
+								<div class="post-tag-list-wrapper">';
+
+			foreach($tags as $tag) {
+				$values .= '<a href="'.get_tag_link($tag->term_id ).'" class="post-tag-list">'.$tag->name.'</a>';
+			}
+			
+			$content_2 = '</div></div>';
+			return $content.$values.$content_2;
+		}
+		
+	}
+}
+add_filter( "the_content", "tag_after_post_content" );
+
+
+
 /**
  * Add more excerpt Length.
  */
