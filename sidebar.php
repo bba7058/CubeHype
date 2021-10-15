@@ -24,10 +24,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</div>
 			</div>
 			<div class="fb-wrapper">
-				<div class="fb-page" data-href="https://web.facebook.com/naturebyte" width="305" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-lazy="true">
-					<blockquote cite="https://web.facebook.com/naturebyte" class="fb-xfbml-parse-ignore">
-						<a href="https://web.facebook.com/naturebyte">
-							Nature Byte
+				<div class="fb-page" data-href="https://web.facebook.com/cubehype" width="305" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-lazy="true">
+					<blockquote cite="https://web.facebook.com/cubehype" class="fb-xfbml-parse-ignore">
+						<a href="https://web.facebook.com/cubehype">
+							CubeHype
 						</a>
 					</blockquote>
 				</div>

@@ -11,7 +11,7 @@
 
 ?>
 
-		<footer class="footer-wrapper" style="background-image:url('<?= esc_url(get_template_directory_uri() .'/assets/img/blog/markus-spiske-gxvMgAxRCPU-unsplash.jpg')?>')">
+		<footer class="footer-wrapper" style="background-image:url('<?= esc_url(get_template_directory_uri() .'/assets/img/footer-bg.jpg')?>')">
 			<div class="inner-footer">
 				<div class="footer-content">
 					<div class="footer-left">
@@ -36,10 +36,10 @@
 								Contact_cubehype@gmail.com
 							</a>
 							<div class="contact-social-icon">
-								<a href="#" class="social-icon">
+								<a href="https://facebook.com/cubehype/" target="_blank" class="social-icon">
 									<i class="fab fa-facebook-f"></i>
 								</a>
-								<a href="#" class="social-icon">
+								<a href="http://m.me/cubehype/" target="_blank" class="social-icon">
 									<i class="fab fa-facebook-messenger"></i>
 								</a>
 								<a href="#" class="social-icon">
