@@ -27,7 +27,7 @@
 <?php wp_body_open(); ?>
 
 	<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-		<a class="navbar-brand" href="<?= esc_url(home_url()); ?>">
+		<a class="navbar-brand ml-3" href="<?= esc_url(home_url()); ?>">
 			<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/brand-logo.png')?>" class="img-brand" alt="brand-logo">
 		</a>
 		<div class="menu-desktop ml-auto">
