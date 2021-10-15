@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Demo
+ * @package CubeHype
  */
 
 ?>
@@ -22,7 +22,7 @@
 					</div>
 					<div class="footer-center">
 						<div class="center-brand">
-							<h2 class="header-footer">DEMO</h2>
+							<h2 class="header-footer">CubeHype</h2>
 							<div class="sub-header-footer">Technology X Lifestyle</div>
 						</div>
 						<div class="dev-by">
@@ -32,8 +32,8 @@
 					<div class="footer-right">
 						<div class="contact-list">
 							<div class="contact-us">CONTACT US</div>
-							<a href="mailto:contact_demo@gmail.com" class="contact-mail">
-								Contact_demo@gmail.com
+							<a href="mailto:contact_cubehype@gmail.com" class="contact-mail">
+								Contact_cubehype@gmail.com
 							</a>
 							<div class="contact-social-icon">
 								<a href="#" class="social-icon">

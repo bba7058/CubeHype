@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Demo
+ * @package CubeHype
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -18,7 +18,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<div class="header-contact">
 				<div class="flex-center">
 					<div class="header-title">
-						ติดตาม Demo ได้ที่
+						ติดตาม CubeHype ได้ที่
 					</div>
 					<div class="line-center"></div>
 				</div>

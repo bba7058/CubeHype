@@ -1,10 +1,10 @@
 <?php
 /**
- * Demo functions and definitions
+ * CubeHype functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Demo
+ * @package CubeHype
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'demo_setup' ) ) :
+if ( ! function_exists( 'cubehype_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'demo_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function demo_setup() {
+	function cubehype_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Demo, use a find and replace
-		 * to change 'demo' to the name of your theme in all the template files.
+		 * If you're building a theme based on CubeHype, use a find and replace
+		 * to change 'cubehype' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'demo', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'cubehype', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'demo_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'demo' ),
+				'menu-1' => esc_html__( 'Primary', 'cubehype' ),
 			)
 		);
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'demo_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'demo_custom_background_args',
+				'cubehype_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,7 +102,7 @@ if ( ! function_exists( 'demo_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'demo_setup' );
+add_action( 'after_setup_theme', 'cubehype_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,22 +111,22 @@ add_action( 'after_setup_theme', 'demo_setup' );
  *
  * @global int $content_width
  */
-function demo_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'demo_content_width', 640 );
+function cubehype_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'cubehype_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'demo_content_width', 0 );
+add_action( 'after_setup_theme', 'cubehype_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function demo_widgets_init() {
+function cubehype_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'demo' ),
+			'name'          => esc_html__( 'Sidebar', 'cubehype' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'demo' ),
+			'description'   => esc_html__( 'Add widgets here.', 'cubehype' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -134,23 +134,23 @@ function demo_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'demo_widgets_init' );
+add_action( 'widgets_init', 'cubehype_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function demo_scripts() {
+function cubehype_scripts() {
 	wp_enqueue_style( 'bootstrap-4-css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css', array(), '4.6.0', 'all');
 	wp_enqueue_style( 'fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4', 'all');
 	wp_enqueue_style( 'default-style', get_stylesheet_uri(), array(),_S_VERSION);
-	wp_enqueue_style( 'demo-style', get_template_directory_uri().'/assets/css/stylesheet.css', array(), '1.0.0', 'all');
-	wp_style_add_data( 'demo-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.css', array(), '1.0.0', 'all');
+	wp_style_add_data( 'cubehype-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'demo-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'demo-customizer', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'cubehype-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'cubehype-customizer', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-4-js','https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js', array('jquery'), '4.6.0', true);
-	wp_enqueue_script( 'demo-script', get_template_directory_uri(). '/assets/js/script.js', array('jquery'), '1.0.0', true);
-	wp_localize_script( 'demo-script', 'script_object', array(
+	wp_enqueue_script( 'cubehype-script', get_template_directory_uri(). '/assets/js/script.js', array('jquery'), '1.0.0', true);
+	wp_localize_script( 'cubehype-script', 'script_object', array(
 
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
@@ -164,7 +164,7 @@ function demo_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'demo_scripts' );
+add_action( 'wp_enqueue_scripts', 'cubehype_scripts' );
 
 
 function web_loadmore_ajax_handler(){
