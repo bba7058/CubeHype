@@ -21,6 +21,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T724MXTBGV"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-T724MXTBGV');
+	</script>
 </head>
 
 <body>
