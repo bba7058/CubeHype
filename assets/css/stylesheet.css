@@ -755,14 +755,14 @@ a:hover{
 }
 
 .sidebar-contact .header-contact .header-title{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: #1b1c1e;
     font-weight: 500;
 }
 
 .sidebar-contact .header-contact .line-center{
     background-color: #26cbff;
-    width: 45%;
+    width: 36%;
     height: 2px;
     margin-left: 10px;
 }
