@@ -1156,6 +1156,12 @@ a:hover{
     font-weight: 600;
 }
 
+.single-content p{
+    line-height: 1.7;
+    font-size: 1.025rem;
+    color: #303030;
+}
+
 .post-tag-box{
     display: flex;
     padding: 1rem 0rem;
