@@ -286,7 +286,6 @@ add_action('wp_ajax_nopriv_loadmore-search', 'loadmore_search'); // wp_ajax_nopr
 
 // Add tag after post content
 function tag_after_post_content($content){
-	if (is_single()) {
 
 		$tags = get_the_tags();
 		if($tags){
@@ -304,8 +303,7 @@ function tag_after_post_content($content){
 			return $content.$values.$content_2;
 		}
 		return $content;
-		
-	}
+	
 }
 add_filter( "the_content", "tag_after_post_content" );
 
