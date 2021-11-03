@@ -1162,6 +1162,18 @@ a:hover{
     color: #303030;
 }
 
+.single-content a{
+    color: #26cbff;
+}
+
+.single-content a:hover{
+    text-decoration: underline;
+}
+
+.single-content a:visited{
+    color: #26cbff;
+}
+
 .post-tag-box{
     display: flex;
     padding: 1rem 0rem;
