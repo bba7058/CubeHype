@@ -1157,9 +1157,9 @@ a:hover{
 }
 
 .single-content p{
-    line-height: 1.7;
-    font-size: 1.025rem;
-    color: #303030;
+    line-height: 26px;
+    font-size: 16px;
+    color: #222;
 }
 
 .single-content a{
