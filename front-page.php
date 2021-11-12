@@ -135,6 +135,7 @@ get_header();
 		<div class="content pb-5">
 			<div class="row">
 				<div class="col-lg-8">
+					<h1 class="header-hide">CubeHype เทคโนโลยี ข่าวบันเทิง ไลฟ์สไตล์ ข่าวเกม ข่าวมือถือ คอมพิวเตอร์ รอบโลก</h1>
 					<div id="inner-content">
 						<section class="section-lifestyle">
 							<div class="header-category">

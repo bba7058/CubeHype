@@ -304,6 +304,15 @@ a:hover{
 
 /* ================================ SECTION LIFESTYLE =============================================== */
 
+h1.header-hide{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    word-wrap: normal;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
 .section-lifestyle,
 .section-tech,
 .section-ent,
