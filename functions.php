@@ -143,13 +143,13 @@ function cubehype_scripts() {
 	wp_enqueue_style( 'bootstrap-4-css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css', array(), '4.6.0', 'all');
 	wp_enqueue_style( 'fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4', 'all');
 	wp_enqueue_style( 'default-style', get_stylesheet_uri(), array(),_S_VERSION);
-	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.css', array(), '1.0.4', 'all');
+	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.min.css', array(), '1.0.4', 'all');
 	wp_style_add_data( 'cubehype-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'cubehype-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'cubehype-customizer', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-4-js','https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js', array('jquery'), '4.6.0', true);
-	wp_enqueue_script( 'cubehype-script', get_template_directory_uri(). '/assets/js/script.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'cubehype-script', get_template_directory_uri(). '/assets/js/script.min.js', array('jquery'), '1.0.0', true);
 	wp_localize_script( 'cubehype-script', 'script_object', array(
 
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
