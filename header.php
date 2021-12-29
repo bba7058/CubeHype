@@ -38,7 +38,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
 		<a class="navbar-brand ml-3" href="<?= esc_url(home_url()); ?>">
-			<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/brand-logo.png')?>" class="img-brand" alt="brand-logo">
+			<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/brand-logo.png')?>" width="90" height="39" alt="brand-logo">
 		</a>
 		<div class="menu-desktop ml-auto">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
