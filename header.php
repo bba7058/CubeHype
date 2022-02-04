@@ -31,6 +31,7 @@
 
 	gtag('config', 'G-T724MXTBGV');
 	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1602050820276008"crossorigin="anonymous"></script>
 </head>
 
 <body>
