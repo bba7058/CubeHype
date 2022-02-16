@@ -143,7 +143,7 @@ function cubehype_scripts() {
 	wp_enqueue_style( 'bootstrap-4-css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css', array(), '4.6.0', 'all');
 	wp_enqueue_style( 'fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4', 'all');
 	wp_enqueue_style( 'default-style', get_stylesheet_uri(), array(),_S_VERSION);
-	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.min.css', array(), '1.0.5', 'all');
+	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.min.css', array(), '1.0.6', 'all');
 	wp_style_add_data( 'cubehype-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'cubehype-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
@@ -173,7 +173,7 @@ function web_loadmore_ajax_handler(){
 
 	$args = array(
         'post_type' => 'post',
-		'status' => 'publish',
+		'post_status' => 'publish',
 		'posts_per_page' => 4,
 		'offset' => $offset,
      );
@@ -199,7 +199,7 @@ function loadmore_category(){
 
 	$args = array(
         'post_type' => 'post',
-		'status' => 'publish',
+		'post_status' => 'publish',
 		'posts_per_page' => 9,
 		'offset' => $offset,
 		'category_name' => $category,
@@ -237,7 +237,7 @@ function loadmore_tag(){
 
 	$args = array(
         'post_type' => 'post',
-		'status' => 'publish',
+		'post_status' => 'publish',
 		'posts_per_page' => 10,
 		'offset' => $offset,
 		'tag' => $tag,
@@ -264,7 +264,7 @@ function loadmore_search(){
 
 	$args = array(
         'post_type' => 'post',
-		'status' => 'publish',
+		'post_status' => 'publish',
 		'posts_per_page' => 10,
 		'offset' => $offset,
 		's' => $search,
@@ -307,7 +307,29 @@ function tag_after_post_content($content){
 }
 add_filter( "the_content", "tag_after_post_content" );
 
+// ribbon category preview in front_page
+function ribbon_category() { 
+	$category = get_the_category();
+	$category_parent_id = $category[0]->category_parent;
 
+	if($category_parent_id != 0 ){
+		$category_parent = get_term($category_parent_id, 'category');
+		$category_name = $category_parent->name;
+	}
+	else{
+		$category_name = $category[0]->name;
+	}
+
+	if($category_name == 'Technology') { 
+		echo '<div class="ribbon-top"><span class="tech">'.$category_name.'</span></div>';
+	} 	else if ($category_name == 'Lifestyle') {
+			echo '<div class="ribbon-top"><span class="lifestyle">'.$category_name.'</span></div>';
+	}   else if ($category_name == 'Entertainment') {
+			echo '<div class="ribbon-top"><span class="ent">'.$category_name.'</span></div>';
+	}  else if ($category_name == 'Worldwide') {
+			echo '<div class="ribbon-top"><span class="ww">'.$category_name.'</span></div>';
+	} 
+} 
 
 /**
  * Add more excerpt Length.
