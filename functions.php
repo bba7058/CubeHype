@@ -143,13 +143,13 @@ function cubehype_scripts() {
 	wp_enqueue_style( 'bootstrap-4-css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css', array(), '4.6.0', 'all');
 	wp_enqueue_style( 'fontawesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4', 'all');
 	wp_enqueue_style( 'default-style', get_stylesheet_uri(), array(),_S_VERSION);
-	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.min.css', array(), '1.0.6', 'all');
+	wp_enqueue_style( 'cubehype-style', get_template_directory_uri().'/assets/css/stylesheet.min.css', array(), '1.0.7', 'all');
 	wp_style_add_data( 'cubehype-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'cubehype-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'cubehype-customizer', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-4-js','https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js', array('jquery'), '4.6.0', true);
-	wp_enqueue_script( 'cubehype-script', get_template_directory_uri(). '/assets/js/script.min.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'cubehype-script', get_template_directory_uri(). '/assets/js/script.min.js', array('jquery'), '1.0.1', true);
 	wp_localize_script( 'cubehype-script', 'script_object', array(
 
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
@@ -330,6 +330,62 @@ function ribbon_category() {
 			echo '<div class="ribbon-top"><span class="ww">'.$category_name.'</span></div>';
 	} 
 } 
+
+// prev next post
+function prev_next(){
+ 
+	$offset = $_POST["offset"];
+	$category = $_POST["cat"];
+	$posts_per_page = $_POST["ppp"];
+
+	$args = array(
+        'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => $posts_per_page,
+		'offset' => $offset,
+		'category_name' => $category,
+     );
+ 
+	$post = new WP_Query( $args );
+ 
+	if($category == 'Technology') {
+		while($post->have_posts() ): 
+			$post->the_post();
+			get_template_part( 'template-parts/content-tech-section');
+		endwhile;	
+	}
+	elseif($category == 'Entertainment'){
+		while($post->have_posts() ): 
+			$post->the_post();
+				get_template_part( 'template-parts/content-ent-section');
+		endwhile;
+	}
+	elseif($category == 'Lifestyle'){
+		if ( $post->have_posts() ) : 
+			$post->the_post();
+			get_template_part( 'template-parts/content-life-section', null, array('layout' => 1));
+		endif;
+		echo '<div class="col-md-6">';
+		if ( $post->have_posts() ) : 
+			while( $post->have_posts() ) : 
+				$post->the_post();
+				get_template_part( 'template-parts/content-life-section', null, array('layout' => 2));
+			endwhile; 
+		endif;
+		echo '</div>';
+	}
+	elseif($category == 'Worldwide'){
+		while($post->have_posts() ): 
+			$post->the_post();
+				get_template_part( 'template-parts/content-ww-section');
+		endwhile;
+	}
+		
+	die; 
+}
+ 
+add_action('wp_ajax_prev_next', 'prev_next'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_prev_next', 'prev_next'); // wp_ajax_nopriv_{action}
 
 /**
  * Add more excerpt Length.

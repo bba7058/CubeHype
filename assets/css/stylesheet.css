@@ -324,6 +324,7 @@ h1.header-hide{
 .section-ent,
 .section-ww{
     margin-bottom: 50px;
+    position: relative;
 }
 
 .section-lifestyle .header-category{
@@ -745,6 +746,101 @@ h1.header-hide{
 
 
 /* ================================ END SECTION DEFAULT  =============================================== */
+
+/* ================================ Previous Next Button  =============================================== */
+
+.prev-next-wrap{
+    text-align: end;
+}
+
+.prev-next-wrap button{
+    background-color: transparent;
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    padding: 0;
+    margin-right: 5px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    color: #909090;
+    border-radius: 1px;
+    transition: all 0.4s ease-out;
+}
+
+.prev-next-wrap button:hover{
+    background-color: #26cbff;
+    border:#26cbff;
+    color: #fff;
+}
+
+.prev-next-wrap button.disabled,
+.prev-next-wrap button.disabled:hover{
+    border: 1px solid #e2e2e2;
+    color: #d2d2d2;
+    background-color: transparent;
+}
+
+.wrapper-content{
+    position: relative;
+}
+
+.overlay-loading::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255, 0.65);
+    z-index: 10;
+}
+
+.animation-loaded{
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight{
+    0% {
+        opacity: .05;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft{
+    0% {
+        opacity: .05;
+        -webkit-transform: translateX(-20px);
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+
+
+/* ================================ END Previous Next Button  =============================================== */
 
 
 
