@@ -319,6 +319,246 @@ jQuery(function ($){
         }
     });
 
+
+    // btn prev-next
+    $('#prev-btn-tech, #prev-btn-ent, #prev-btn-life, #prev-btn-ww').attr('disabled',true).addClass('disabled');
+    
+    var offset_tech = 0;
+    $('#prev-btn-tech, #next-btn-tech').on('click', function() {
+
+        var btn = $(this);
+        var prev_btn = $('#prev-btn-tech');
+        var next_btn = $('#next-btn-tech');
+        var chk_next_btn = 'next-btn-tech';
+        var content_body = $('#load-next-prev-tech');
+        var max_page_tech = content_body.data('max') - 1;
+
+        content_body.removeClass('fadeInLeft fadeInRight')
+      
+        if (btn.attr('id') == chk_next_btn) {
+            offset_tech++;
+        }else {
+            offset_tech--;
+        }
+
+        if (offset_tech <= 0){
+            offset_tech = 0;
+            prev_btn.attr('disabled',true).addClass('disabled');
+        }else {
+            prev_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        if(offset_tech == max_page_tech){
+            next_btn.attr('disabled',true).addClass('disabled');
+        }else{
+            next_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        var data = {
+                'action': 'prev_next',
+                'offset' : offset_tech * 4,
+                'cat' : 'Technology',
+                'ppp' : 4,
+            };
+            $.ajax({
+                url: script_object.ajaxurl,
+                data : data,
+                type:'POST',
+                beforeSend : function ( xhr ) {
+                content_body.addClass('overlay-loading');
+            },
+            })
+            .done(function(response) {
+                if(response) { 
+                    content_body.removeClass('overlay-loading');
+                    
+                    if (btn.attr('id') == chk_next_btn) {
+                        content_body.addClass('fadeInRight');
+                    }else {
+                        content_body.addClass('fadeInLeft');
+                    }
+                    content_body.html(response);
+                }
+            });
+    });
+
+    var offset_ent = 0;
+    $('#prev-btn-ent, #next-btn-ent').on('click', function() {
+
+        var btn = $(this);
+        var prev_btn = $('#prev-btn-ent');
+        var next_btn = $('#next-btn-ent');
+        var chk_next_btn = 'next-btn-ent';
+        var content_body = $('#load-next-prev-ent');
+        var max_page_ent = content_body.data('max') - 1;
+
+        content_body.removeClass('fadeInLeft fadeInRight')
+      
+        if (btn.attr('id') == chk_next_btn) {
+            offset_ent++;
+        }else {
+            offset_ent--;
+        }
+
+        if (offset_ent <= 0){
+            offset_ent = 0;
+            prev_btn.attr('disabled',true).addClass('disabled');
+        }else {
+            prev_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        if(offset_ent == max_page_ent){
+            next_btn.attr('disabled',true).addClass('disabled');
+        }else{
+            next_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        var data = {
+                'action': 'prev_next',
+                'offset' : offset_ent * 4,
+                'cat' : 'Entertainment',
+                'ppp' : 4,
+            };
+            $.ajax({
+                url: script_object.ajaxurl,
+                data : data,
+                type:'POST',
+                beforeSend : function ( xhr ) {
+                content_body.addClass('overlay-loading');
+            },
+            })
+            .done(function(response) {
+                if(response) { 
+                    content_body.removeClass('overlay-loading');
+                    
+                    if (btn.attr('id') == chk_next_btn) {
+                        content_body.addClass('fadeInRight');
+                    }else {
+                        content_body.addClass('fadeInLeft');
+                    }
+                    content_body.html(response);
+                }
+            });
+    });
+
+    var offset_life = 0;
+    $('#prev-btn-life, #next-btn-life').on('click', function() {
+
+        var btn = $(this);
+        var prev_btn = $('#prev-btn-life');
+        var next_btn = $('#next-btn-life');
+        var chk_next_btn = 'next-btn-life';
+        var content_body = $('#load-next-prev-life');
+        var max_page_life = content_body.data('max') - 1;
+
+        content_body.removeClass('fadeInLeft fadeInRight')
+      
+        if (btn.attr('id') == chk_next_btn) {
+            offset_life++;
+        }else {
+            offset_life--;
+        }
+
+        if (offset_life <= 0){
+            offset_life = 0;
+            prev_btn.attr('disabled',true).addClass('disabled');
+        }else {
+            prev_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        if(offset_life == max_page_life){
+            next_btn.attr('disabled',true).addClass('disabled');
+        }else{
+            next_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        var data = {
+                'action': 'prev_next',
+                'offset' : offset_life * 5,
+                'cat' : 'Lifestyle',
+                'ppp' : 5,
+            };
+            $.ajax({
+                url: script_object.ajaxurl,
+                data : data,
+                type:'POST',
+                beforeSend : function ( xhr ) {
+                content_body.addClass('overlay-loading');
+            },
+            })
+            .done(function(response) {
+                if(response) { 
+                    content_body.removeClass('overlay-loading');
+                    
+                    if (btn.attr('id') == chk_next_btn) {
+                        content_body.addClass('fadeInRight');
+                    }else {
+                        content_body.addClass('fadeInLeft');
+                    }
+                    content_body.html(response);
+                }
+            });
+    });
+
+    var offset_ww = 0;
+    $('#prev-btn-ww, #next-btn-ww').on('click', function() {
+
+        var btn = $(this);
+        var prev_btn = $('#prev-btn-ww');
+        var next_btn = $('#next-btn-ww');
+        var chk_next_btn = 'next-btn-ww';
+        var content_body = $('#load-next-prev-ww');
+        var max_page_ww = content_body.data('max') - 1;
+
+        content_body.removeClass('fadeInLeft fadeInRight')
+      
+        if (btn.attr('id') == chk_next_btn) {
+            offset_ww++;
+        }else {
+            offset_ww--;
+        }
+
+        if (offset_ww <= 0){
+            offset_ww = 0;
+            prev_btn.attr('disabled',true).addClass('disabled');
+        }else {
+            prev_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        if(offset_ww == max_page_ww){
+            next_btn.attr('disabled',true).addClass('disabled');
+        }else{
+            next_btn.attr('disabled', false).removeClass('disabled');
+        }
+
+        var data = {
+                'action': 'prev_next',
+                'offset' : offset_ww * 6,
+                'cat' : 'Worldwide',
+                'ppp' : 6,
+            };
+            $.ajax({
+                url: script_object.ajaxurl,
+                data : data,
+                type:'POST',
+                beforeSend : function ( xhr ) {
+                content_body.addClass('overlay-loading');
+            },
+            })
+            .done(function(response) {
+                if(response) { 
+                    content_body.removeClass('overlay-loading');
+                    
+                    if (btn.attr('id') == chk_next_btn) {
+                        content_body.addClass('fadeInRight');
+                    }else {
+                        content_body.addClass('fadeInLeft');
+                    }
+                    content_body.html(response);
+                }
+            });
+    });
+
     
 
 });
