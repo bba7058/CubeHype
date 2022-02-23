@@ -19,7 +19,7 @@
                 <span class="mx-3">|</span>
                 <div class="post-date">
                     <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                    <?= get_the_date(); ?>
+                    <?= thai_month_format(); ?>
                 </div>
             </div>
             <p class="card-text"><?= get_the_excerpt(); ?></p>
@@ -46,7 +46,7 @@
                 <div class="info-post">
                     <div class="post-date">
                         <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-                        <?= get_the_date(); ?>
+                        <?= thai_month_format(); ?>
                     </div>
                 </div>
             </div>
