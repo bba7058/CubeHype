@@ -18,24 +18,22 @@ get_header();
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
-	<div class="container px-2">
+	<div class="container-lg">
 		<section class="section-preview" id="preview">
-			<div class="row h-100 mx-auto">
+			<div class="row h-100">
 				<?php
-					$lastest_offest_0 = new WP_Query( array( 
+					$lastest_publish_preview = new WP_Query( array( 
 						'post_type' => 'post',
 						'post_status' => 'publish',
-						'offset' => 0,
 						'orderby' => 'post_date',
 						'order' => 'DESC',
-						'posts_per_page' => '1',
+						'posts_per_page' => '4',
 					));
 
-					if ( $lastest_offest_0->have_posts() ) : 
-						$lastest_offest_0->the_post();
+					if ( $lastest_publish_preview->have_posts() ) : 
+						$lastest_publish_preview->the_post();
 				?>
-
-					<div class="col-12 col-lg-6 preview-left">
+					<div class="col-12 col-md-6 preview-left">
 						<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
 							<?= the_post_thumbnail( 'large',
 									array('class' => 'img-preview')
@@ -47,25 +45,14 @@ get_header();
 							<?php 
 								ribbon_category();
 							?>	
-						
 						</a>	
 					</div>
 				<?php endif; ?>
-
-				<div class="col-12 col-lg-6 preview-right">
+				<div class="col-12 col-md-6 preview-right">
 					<div class="row mx-auto preview-right-top">
 						<?php
-							$lastest_offest_1 = new WP_Query( array( 
-								'post_type' => 'post',
-								'post_status' => 'publish',
-								'offset' => 1,
-								'orderby' => 'post_date',
-								'order' => 'DESC',
-								'posts_per_page' => '1',
-							));
-
-							if ( $lastest_offest_1->have_posts() ) : 
-								$lastest_offest_1->the_post();
+							if ( $lastest_publish_preview->have_posts() ) : 
+								$lastest_publish_preview->the_post();
 						?>
 						<div class="col-12 h-100 px-0 box-right">
 							<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
@@ -85,19 +72,10 @@ get_header();
 					</div>
 					<div class="row mx-auto preview-right-bottom">
 						<?php
-							$lastest_offest_2 = new WP_Query( array( 
-								'post_type' => 'post',
-								'post_status' => 'publish',
-								'offset' => 2,
-								'orderby' => 'post_date',
-								'order' => 'DESC',
-								'posts_per_page' => '1',
-							));
-
-							if ( $lastest_offest_2->have_posts() ) : 
-								$lastest_offest_2->the_post();
+							if ( $lastest_publish_preview->have_posts() ) : 
+								$lastest_publish_preview->the_post();
 						?>	
-						<div class="col-sm-6 sm-box">
+						<div class="col-6 sm-box">
 							<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
 								<?= the_post_thumbnail( 'large',
 										array('class' => 'img-preview')
@@ -113,18 +91,10 @@ get_header();
 						</div>
 						<?php endif; ?>
 						<?php
-							$lastest_offest_3 = new WP_Query( array( 
-								'post_type' => 'post',
-								'post_status' => 'publish',
-								'offset' => 3,
-								'orderby' => 'post_date',
-								'order' => 'DESC',
-							));
-
-							if ( $lastest_offest_3->have_posts() ) : 
-								$lastest_offest_3->the_post();
+							if ( $lastest_publish_preview->have_posts() ) : 
+								$lastest_publish_preview->the_post();
 						?>
-						<div class="col-sm-6 sm-box-2">
+						<div class="col-6 sm-box-2">
 							<a href="<?= esc_url(get_permalink()); ?>" class="preview-item">
 								<?= the_post_thumbnail( 'large',
 										array('class' => 'img-preview')
@@ -166,41 +136,13 @@ get_header();
 							<div class="wrapper-content">
 								<div class="row animation-loaded" id="load-next-prev-tech" data-max="<?=$num_page_tech?>">
 									<?php     
-									
 										while( $tech_post->have_posts() ) : 
 											$tech_post->the_post();
-									?>
-										<div class="col-6">
-											<div class="card border-0 tech-item mb-3">
-												<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
-													<?= the_post_thumbnail( 'large',
-															array('class' => 'card-img-top img-tech')
-														); 
-													?>
-												</a>
-													<div class="card-body px-0">
-													<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
-														<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-													</a>
-													<div class="info-post">
-														<div class="post-author">
-															<i class="fa fa-user mr-2" aria-hidden="true"></i>
-															<?= get_the_author(); ?>
-														</div>
-														<span class="mx-3">|</span>
-														<div class="post-date">
-															<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-															<?= get_the_date(); ?>
-														</div>
-													</div>
-													<p class="card-text"><?= get_the_excerpt(); ?></p>
-												</div>
-											</div>
-										</div>
-									<?php endwhile; ?>
+											get_template_part( 'template-parts/content-tech-section');
+										endwhile; ?>
 								</div>
 							</div>	
-							<div class="prev-next-wrap mt-3">
+							<div class="prev-next-wrap mt-2">
 								<button type="button" class="page-prev-btn" id="prev-btn-tech">
 									<i class="fas fa-angle-left"></i>
 								</button>
@@ -229,40 +171,8 @@ get_header();
 									<?php     
 										while( $ent_post->have_posts() ) : 
 											$ent_post->the_post();
-									?>
-									<div class="col-6 ent-wrapper">
-										<a href="<?= esc_url(get_permalink()); ?>" class="ent-list">
-											<?= the_post_thumbnail( 'large',
-													array('class' => 'img-cover')
-												); 
-											?>
-											<div class="text-overlay flex-center">
-												<div class="text-wrapper">
-													<div class="flex-center flex-column flex-sm-row mb-2">
-														<div class="ent-info mr-1">
-															<?php 
-																$primary_term_id = yoast_get_primary_term_id('category');
-																$postTerm = get_term( $primary_term_id );
-																if ( $postTerm && ! is_wp_error( $postTerm ) ) { 
-															?>
-																<span class="cate"><?= $postTerm->name;?></span>
-															
-															<?php } 
-																elseif(is_wp_error( $postTerm )) {
-																$get_cat = get_the_category();
-															?>
-																<span class="cate"><?= $get_cat[0]->name; ?></span>
-															<?php } ?>
-																<span>|</span>
-														</div>
-														<span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
-													</div>
-													<h3 class="ent-title"><?= get_the_title();?></h3>
-												</div>
-											</div>		
-										</a>
-									</div>
-									<?php endwhile; ?>
+											get_template_part( 'template-parts/content-ent-section');
+										endwhile; ?>
 								</div>
 							</div>	
 							<div class="prev-next-wrap mt-5">
@@ -293,73 +203,17 @@ get_header();
 									<?php     							
 										if ( $lifestyle_post->have_posts() ) : 
 											$lifestyle_post->the_post();
-									?>
-									<div class="col-md-6">
-										<div class="card border-0 first-item mb-3">
-											<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
-												<?= the_post_thumbnail( 'large',
-														array('class' => 'card-img-top img-lifestyle')
-													); 
-												?>
-											</a>
-												<div class="card-body px-0">
-												<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
-													<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-												</a>
-												<div class="info-post">
-													<div class="post-author">
-														<i class="fa fa-user mr-2" aria-hidden="true"></i>
-														<?= get_the_author(); ?>
-													</div>
-													<span class="mx-3">|</span>
-													<div class="post-date">
-														<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-														<?= get_the_date(); ?>
-													</div>
-												</div>
-												<p class="card-text"><?= get_the_excerpt(); ?></p>
-											</div>
-										</div>
-									</div>
-									<?php 
+											get_template_part( 'template-parts/content-life-section', null, array('layout' => 1));
 										endif;
-									?>
-									<div class="col-md-6">
-										<?php    
-											if ( $lifestyle_post->have_posts() ) : 
+										echo '<div class="col-md-6">';
+										if ( $lifestyle_post->have_posts() ) : 
 											while( $lifestyle_post->have_posts() ) : 
 												$lifestyle_post->the_post();
-										?>
-										<div class="card mb-3 card-items" style="max-width: 540px;">
-											<div class="row no-gutters">
-												<div class="col-4">
-													<a href="<?= esc_url(get_permalink()); ?>" class="card-link-img">
-														<?= the_post_thumbnail( 'medium',
-																array('class' => 'img-life')
-															); 
-														?>
-													</a>	
-												</div>
-												<div class="col-8">
-													<div class="card-body py-1 px-2">
-														<a href="<?= esc_url(get_permalink()); ?>" class="card-link">
-															<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-														</a>
-														<div class="info-post">
-															<div class="post-date">
-																<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-																<?= get_the_date(); ?>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<?php 
+												get_template_part( 'template-parts/content-life-section', null, array('layout' => 2));
 											endwhile; 
-											endif; 
-										?>
-									</div>
+										endif;
+										echo '</div>'
+									?>
 								</div>
 							</div>		
 							<div class="prev-next-wrap mt-5">
@@ -389,34 +243,8 @@ get_header();
 									<?php     
 										while( $ww_post->have_posts() ) : 
 											$ww_post->the_post();
-									?>
-										<div class="col-6 col-md-4 px-1">
-											<div class="card border-0 ww-wrapper">
-												<a href="<?= esc_url(get_permalink()); ?>" class="ww-link-img">
-													<?= the_post_thumbnail( 'medium',
-															array('class' => 'img-ww')
-														); 
-													?>
-												</a>
-												<div class="card-body ww-body">
-													<a href="<?= esc_url(get_permalink()); ?>" class="ww-title-link">
-														<h3 class="card-title"><?= get_the_title();?></h3>
-													</a>
-													<div class="info-post">
-														<div class="post-author">
-															<i class="fa fa-user mr-2" aria-hidden="true"></i>
-															<?= get_the_author(); ?>
-														</div>
-														<span class="mx-3">|</span>
-														<div class="post-date">
-															<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-															<?= get_the_date(); ?>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<?php endwhile; ?>
+											get_template_part( 'template-parts/content-ww-section');
+										endwhile; ?>
 								</div>
 							</div>
 							<div class="prev-next-wrap mt-5">
@@ -446,41 +274,9 @@ get_header();
 								<?php
 									while( $lastest_post->have_posts() ) : 
 										$lastest_post->the_post();
+										get_template_part( 'template-parts/content-default');
+									endwhile; 
 								?>
-									<div class="card mb-3 default-items">
-										<div class="row no-gutters">
-											<div class="col-4">
-												<a href="<?= esc_url(get_permalink()); ?>" class="default-link-img">
-													<?= the_post_thumbnail( 'medium',
-															array('class' => 'img-default')
-														); 
-													?>
-												</a>	
-											</div>
-											<div class="col-8">
-												<div class="card-body py-1 px-3">
-													<div class="inner-body-wrapper">
-														<a href="<?= esc_url(get_permalink()); ?>" class="default-link">
-															<h3 class="card-title mb-1"><?= get_the_title();?></h3>
-														</a>
-														<div class="info-post">
-															<div class="post-author">
-																<i class="fa fa-user mr-2" aria-hidden="true"></i>
-																<?= get_the_author(); ?>
-															</div>
-															<span class="mx-3">|</span>
-															<div class="post-date">
-																<i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
-																<?= get_the_date(); ?>
-															</div>
-														</div>
-														<p class="card-text"><?= get_the_excerpt(); ?></p>
-													</div>	
-												</div>
-											</div>
-										</div>
-									</div>
-									<?php endwhile; ?>
 							</div>
 							<?php if($num_page > 1) { ?>
 								<div class="btn-load">
