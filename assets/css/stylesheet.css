@@ -365,14 +365,22 @@ h1.header-hide{
     font-size: 14px;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     overflow: hidden;
     -webkit-box-orient: vertical;
+}
+
+.section-lifestyle .first-item .card-text{
+    -webkit-line-clamp: 3;
+}
+
+.section-tech .tech-item .card-text{
+    -webkit-line-clamp: 2;
 }
 
 .info-post{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .info-post .post-author,
@@ -383,7 +391,6 @@ h1.header-hide{
     align-items: center;
     color: #9E9E9E;
     font-size: 13px;
-    margin-bottom: 10px;
 }
 
 .info-post .post-view{
@@ -448,16 +455,21 @@ h1.header-hide{
     background-color: #262DFF;
 }
 
+.section-tech .tech-item .card-body{
+    padding: 1.025rem;
+}
+
 .section-tech .tech-item .img-tech{
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
 }
 
 .section-tech .tech-item .card-title{
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #1b1c1e;
+    letter-spacing: 0.25px;
 }
 
 .section-tech .tech-item .card-link{
@@ -713,7 +725,7 @@ h1.header-hide{
     color: #7f7f7f;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     overflow: hidden;
     -webkit-box-orient: vertical;
 }
@@ -798,8 +810,6 @@ h1.header-hide{
 .animation-loaded{
     -webkit-animation-duration: .8s;
     animation-duration: .8s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
 }
 
 .fadeInRight {
@@ -815,8 +825,8 @@ h1.header-hide{
 @keyframes fadeInRight{
     0% {
         opacity: .05;
-        -webkit-transform: translateX(20px);
-        transform: translateX(20px);
+        -webkit-transform: translateX(15px);
+        transform: translateX(15px);
     }
     100% {
         opacity: 1;
@@ -828,8 +838,8 @@ h1.header-hide{
 @keyframes fadeInLeft{
     0% {
         opacity: .05;
-        -webkit-transform: translateX(-20px);
-        transform: translateX(-20px);
+        -webkit-transform: translateX(-15px);
+        transform: translateX(-15px);
     }
     100% {
         opacity: 1;
@@ -974,6 +984,8 @@ h1.header-hide{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 50%;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 .footer-wrapper:after{
@@ -1052,6 +1064,7 @@ h1.header-hide{
     margin-bottom: 5px;
     display: inline-block;
     font-size: 0.875rem;
+    color: #fff;
 }
 
 .footer-right .contact-list .contact-mail:hover{
@@ -1294,6 +1307,10 @@ h1.header-hide{
     margin-bottom: 0.5rem;
 }
 
+.single-content .twitter-tweet{
+    margin: 0 auto;
+}
+
 .post-tag-box{
     display: flex;
     padding: 1rem 0rem;
@@ -1463,18 +1480,16 @@ div.sharedaddy h3.sd-title {
         display: none;
     }
 
-    .section-preview .preview-left,
-    .section-preview .preview-right {
-        padding: 0px 2px 2px 0px;
-        height: 50%;
-    }
-
     .section-preview{
-        height: 1150px;
+        height: 400px;
     }
 
-    .section-lifestyle .first-item .card-title,
-    .section-tech .tech-item .card-title  {
+    .section-preview .preview-left .title-left, 
+    .section-preview .box-right .title-left, .section-top .top-title {
+        font-size: 18px;
+    }
+
+    .section-lifestyle .first-item .card-title{
         font-size: 1.5rem;
     }
 
@@ -1532,6 +1547,23 @@ div.sharedaddy h3.sd-title {
 
 @media screen and (max-width: 767.98px){
 
+    .section-preview .preview-left,
+    .section-preview .preview-right {
+        padding: 0px 0px 2px 0px;
+    }
+
+    .section-preview .preview-left{
+        height: 33.3%;
+    } 
+    
+    .section-preview .preview-right {
+        height: 66.6%;
+    }
+
+    .section-preview{
+        height: 800px;
+    }
+
     .section-lifestyle .first-item .img-lifestyle {
         height: 50vw;
     }
@@ -1543,6 +1575,10 @@ div.sharedaddy h3.sd-title {
     .section-tech .tech-item .img-tech{
         height: 28vw;
     } 
+
+    .section-tech .tech-item .card-title{
+        font-size: 1.125rem;
+    }
 
     .section-top .wrapper-left,
     .section-top .wrapper-right{
@@ -1559,39 +1595,33 @@ div.sharedaddy h3.sd-title {
         width: 200px;
     }
 
-    .section-preview .preview-left{
-        height: 25%;
-    } 
-    
-    .section-preview .preview-right {
-        height: 75%;
-    }
-
-    .preview-right-top{
-        height: 33.3%;
-    }
-
-    .preview-right-bottom{
-        height: 66.6%;
-    }
-
-    .section-preview .sm-box,
-    .section-preview .sm-box-2{
-        height: 50%;
-    }
-
     .section-preview .preview-right-bottom .ribbon-top{
         top: 20px;
         left: 35px;
     }
 
-    .section-preview .preview-right-bottom .ribbon-top span{
-        font-size: 1rem;
+    .section-preview .ribbon-top span{
+        font-size: 13px;
     }
 
-    .section-lifestyle .first-item .card-title,
-    .section-tech .tech-item .card-title  {
+    .section-lifestyle .first-item .card-title{
         font-size: 1.25rem;
+    }
+
+    .section-tech .tech-item .img-tech{
+        height: 35vw;
+    }
+    
+    .section-tech .tech-item .card-title{
+        font-size: 1.025rem;
+    }
+
+    .section-tech .tech-item .card-text {
+        font-size: 13px;
+    }
+
+    .info-post {
+        margin-bottom: 5px;
     }
 
     .info-post .post-author, 

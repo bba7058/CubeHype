@@ -11,11 +11,11 @@
                 <h3 class="card-title mb-1"><?= get_the_title();?></h3>
             </a>
             <div class="info-post">
-                <div class="post-author">
+                <div class="post-author mr-3 mr-sm-0">
                     <i class="fa fa-user mr-2" aria-hidden="true"></i>
                     <?= get_the_author(); ?>
                 </div>
-                <span class="mx-3">|</span>
+                <span class="d-none d-sm-block mx-3">|</span>
                 <div class="post-date">
                     <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i>
                     <?= thai_month_format(); ?>

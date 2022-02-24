@@ -13,7 +13,7 @@ get_header();
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
-	<div class="container px-2">
+	<div class="container-lg">
 		<section class="section-top pt-3" id="preview">
         <?php
             if ( function_exists('yoast_breadcrumb') ) {
@@ -29,7 +29,7 @@ get_header();
                     'posts_per_page' => 2,
                 ));
             ?>
-			<div class="row mx-auto">
+			<div class="row">
                 <?php 
                     while( $post_top_category->have_posts() ) : 
                     $post_top_category->the_post();

@@ -21,7 +21,7 @@
                         ?>
                             <span class="cate"><?= $get_cat[0]->name; ?></span>
                         <?php } ?>
-                            <span>|</span>
+                            <span class="d-none d-sm-inline-block">|</span>
                     </div>
                     <span class="ent-date"><?= get_the_date('d/m/y'); ?></span>		
                 </div>
