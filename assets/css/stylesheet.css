@@ -142,13 +142,31 @@ a:hover{
     font-size: 20px;
 }
 
-.collapse-sub-memu{
+.collapse-sub-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 500;
+    flex-wrap: wrap;
     min-height: 45px;
+    font-weight: 500;
+}
+
+.collapse-sub-menu .nav-link{
+    width: calc(100% - 60px);
+}
+
+.collapse-sub-menu .btn-toggle-nav{
+    width: 60px;
+}
+
+.collapse-sub-menu .text-link,
+.collapse-sub-menu .btn-toggle-nav{
     color: #5e5e5e !important;
+}
+
+.collapse-sub-menu .btn-toggle-nav:focus{
+    box-shadow: none;
+    border: 1px solid transparent;
 }
 
 .menu-mobile .sub-menu-list{

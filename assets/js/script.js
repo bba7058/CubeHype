@@ -41,6 +41,10 @@ jQuery(function ($){
             $('.popular-position').removeClass('scroll-fixed');
             $('.popular-position').removeClass('non-fixed');
         }
+
+        if(win.width() > 992){
+            $('#collapse-menu').removeClass('show');
+        }
     });
 
 
