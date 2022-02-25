@@ -43,8 +43,8 @@
 		</a>
 		<div class="menu-desktop ml-auto">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
-					<a class="nav-link active px-3 dropdown-wrapper" href="<?= esc_url(home_url()); ?>">Home</a>
+				<li class="nav-item">
+					<a class="nav-link <?= (is_home() || is_front_page() ? 'active' : 'text-link')?> px-3 dropdown-wrapper" href="<?= esc_url(home_url()); ?>">Home</a>
 				</li>
 				
 				<?php
@@ -56,11 +56,23 @@
 					));
 
 					foreach($categories as $category) { ?>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-wrapper px-3" href="<?= esc_url(get_category_link($category->cat_ID)); ?>">
+						<?php
+							$child_cat_info = get_queried_object();
+							$cat_parent_id = $child_cat_info->parent;
+
+							if($cat_parent_id != 0 ){
+								$category_parent = get_term($cat_parent_id, 'category');
+								$cat_child_parent_name = $category_parent->name;
+							}
+							else{
+								$cat_child_parent_name = $child_cat_info->name;
+							}
+						?>
+						<li class="nav-item dropdown flex-center">
+							<a class="nav-link <?= ($category->name == $cat_child_parent_name ? 'active' : 'text-link') ?> dropdown-wrapper px-3" href="<?= esc_url(get_category_link($category->cat_ID)); ?>">
 								<?= $category->name ?>
-							<i class="fas fa-angle-down"></i>
 							</a>
+							<i class="fas fa-angle-down"></i>
 							<div class="dropdown-menu dropdown-hover">
 								<?php 
 									$child_categories = get_categories(
@@ -91,15 +103,27 @@
 		<!-- menu mobile -->
 		<div class="collapse navbar-collapse pb-2 menu-mobile" id="collapse-menu">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
-					<a class="nav-link active px-3 collapse-sub-memu" href="<?= esc_url(home_url()); ?>">Home</a>
+				<li class="nav-item collapse-sub-menu">
+					<a class="nav-link <?= (is_home() || is_front_page() ? 'active' : 'text-link')?> px-3" href="<?= esc_url(home_url()); ?>">Home</a>
 				</li>
 				<?php foreach($categories as $category) { ?>
-					<li class="nav-item">
-						<a class="nav-link collapse-sub-memu px-3" href="<?= esc_url(get_category_link($category->cat_ID)); ?>" data-toggle="collapse" data-target="#collapse-<?= $category->slug; ?>" aria-controls="collapse-<?= $category->slug; ?>" aria-expanded="false" aria-label="Toggle navigation">
+					<?php
+						$child_cat_info = get_queried_object();
+						$cat_parent_id = $child_cat_info->parent;
+
+						if($cat_parent_id != 0 ){
+							$category_parent = get_term($cat_parent_id, 'category');
+							$cat_child_parent_name = $category_parent->name;
+						}
+						else{
+							$cat_child_parent_name = $child_cat_info->name;
+						}
+					?>
+					<li class="nav-item collapse-sub-menu">
+						<a class="nav-link <?= ($category->name == $cat_child_parent_name ? 'active' : 'text-link') ?> px-3" href="<?= esc_url(get_category_link($category->cat_ID)); ?>">
 							<?= $category->name ?>
-						<i class="fas fa-angle-down"></i>
 						</a>
+						<button type="button" class="btn btn-lg btn-toggle-nav" data-toggle="collapse" data-target="#collapse-<?= $category->slug; ?>" aria-controls="collapse-<?= $category->slug; ?>" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-angle-down"></i></button>
 						<div class="collapse navbar-collapse" id="collapse-<?= $category->slug; ?>">
 						<?php 
 							$child_categories = get_categories(
