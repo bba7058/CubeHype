@@ -1498,6 +1498,19 @@ div.sharedaddy h3.sd-title {
         display: none;
     }
 
+    .search-icon:hover ~ .input-search{
+    width: 250px;
+    border-bottom: 2px solid #ddd;
+    transition: all 0.7s cubic-bezier(0, .27, .45, 1);
+}
+
+.input-search:hover{
+    width: 250px;
+    border-bottom: 2px solid #26cbff;
+    transition: all 0.7s cubic-bezier(0, .27, .45, 1);
+    box-shadow: unset;
+}
+
     .section-preview{
         height: 400px;
     }
@@ -1608,8 +1621,8 @@ div.sharedaddy h3.sd-title {
 
 @media screen and (max-width: 575.98px){
 
-    .search-icon:focus ~ .input-search,
-    .input-search:focus{
+    .search-icon:hover ~ .input-search,
+    .input-search:hover{
         width: 200px;
     }
 
@@ -1671,8 +1684,8 @@ div.sharedaddy h3.sd-title {
 
 @media screen and (max-width: 395.98px){
 
-    .search-icon:focus ~ .input-search,
-    .input-search:focus{
+    .search-icon:hover ~ .input-search,
+    .input-search:hover{
         width: 134px;
     }
 
