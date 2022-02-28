@@ -13,20 +13,20 @@ get_header();
 <div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v11.0" nonce="DPbQOrlP"></script>
 	
-	<div class="container px-2">
-		<section class="section-top pt-3" id="preview"></section>
+	<div class="container-lg">
+		<section class="section-top pt-lg-3" id="preview"></section>
 		<div class="content pb-5">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-8 px-0 px-lg-3">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<section class="single-post" id="inner-content">
 						<img src="<?= esc_url(the_post_thumbnail_url())?>" class="img-featured-post" alt="">
 						<?php
 						if ( function_exists('yoast_breadcrumb') ) {
-							yoast_breadcrumb( '<div class="breadcrumb mb-0" id="breadcrumbs">','</div>' );
+							yoast_breadcrumb( '<div class="breadcrumb mb-0 px-3 px-lg-0" id="breadcrumbs">','</div>' );
 						}
 						?>
-						<div class="header-title mb-3 border-bottom">
+						<div class="header-title mb-3 border-bottom px-3 px-lg-0">
 							<h1 class="mt-0 title-post"><?php the_title();?></h1>
 							<div class="info-post">
 								<div class="post-author">
@@ -44,7 +44,7 @@ get_header();
 								</div>
 							</div>
 						</div>
-						<div class="single-content border-bottom">
+						<div class="single-content border-bottom px-3 px-lg-0">
 							<?php the_content() ?>
 						</div>
 					</section>
