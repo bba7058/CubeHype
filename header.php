@@ -38,8 +38,8 @@
 <?php wp_body_open(); ?>
 
 	<nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-		<a class="navbar-brand ml-3" href="<?= esc_url(home_url()); ?>">
-			<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/brand-logo.png')?>" width="90" height="39" alt="brand-logo">
+		<a class="navbar-brand ml-1 ml-sm-3" href="<?= esc_url(home_url()); ?>">
+			<img src="<?= esc_url(get_template_directory_uri() .'/assets/img/brand-logo.png')?>" class="img-brand" alt="cubehype">
 		</a>
 		<div class="menu-desktop ml-auto">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -101,7 +101,7 @@
 		</form>
 
 		<!-- menu mobile -->
-		<div class="collapse navbar-collapse pb-2 menu-mobile" id="collapse-menu">
+		<div class="collapse navbar-collapse menu-mobile" id="collapse-menu">
 			<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 				<li class="nav-item collapse-sub-menu">
 					<a class="nav-link <?= (is_home() || is_front_page() ? 'active' : 'text-link')?> px-3" href="<?= esc_url(home_url()); ?>">Home</a>

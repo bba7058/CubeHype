@@ -118,18 +118,21 @@ a:hover{
     position: absolute;
     right: 0px;
     background-color: transparent;
+    padding: 0.25rem 1rem;
 }
 
+.search-icon:hover ~ .input-search,
 .search-icon:focus ~ .input-search{
     width: 250px;
     border-bottom: 2px solid #ddd;
-    transition: all 0.7s cubic-bezier(0, .27, .45, 1);
+    transition: all 1s cubic-bezier(0, .27, .45, 1);
 }
 
+.input-search:hover,
 .input-search:focus{
     width: 250px;
     border-bottom: 2px solid #26cbff;
-    transition: all 0.7s cubic-bezier(0, .27, .45, 1);
+    transition: all 1s cubic-bezier(0, .27, .45, 1);
     box-shadow: unset;
 }
 
@@ -1289,7 +1292,7 @@ h1.header-hide{
 /* ================================  SINGLE PAGE  =============================================== */
 
 .single-post .img-featured-post{
-    height: 350px;
+    max-height: 350px;
     width: 100%;
     object-fit: cover;
 }
@@ -1299,9 +1302,9 @@ h1.header-hide{
 }
 
 .single-content p{
-    line-height: 26px;
-    font-size: 16px;
-    color: #222;
+    line-height: 1.5em;
+    font-size: 1.025rem;
+    color: #292b2c;
 }
 
 .single-content a{
@@ -1321,8 +1324,38 @@ h1.header-hide{
 }
 
 .single-content h1{
+    font-weight: 600;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+}
+
+.single-content h2{
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 1.25rem 0;
+}
+
+.single-content h3{
+    font-weight: 600;
+    font-size: 1.25em;
+    margin: 1.25rem 0;
+}
+
+.single-content h4{
+    font-weight: 600;
+    font-size: 0.875em;
+    margin: 1.25rem 0;
+}
+
+.single-content h5{
+    font-weight: 600;
+    font-size: 0.825em;
+    margin: 1.35rem 0;  
+}
+
+.single-content h6{
+    font-weight: 600;
+    font-size: 0.675em;
+    margin: 1.5rem 0;
 }
 
 .single-content .twitter-tweet{
@@ -1498,19 +1531,6 @@ div.sharedaddy h3.sd-title {
         display: none;
     }
 
-    .search-icon:hover ~ .input-search{
-    width: 250px;
-    border-bottom: 2px solid #ddd;
-    transition: all 0.7s cubic-bezier(0, .27, .45, 1);
-}
-
-.input-search:hover{
-    width: 250px;
-    border-bottom: 2px solid #26cbff;
-    transition: all 0.7s cubic-bezier(0, .27, .45, 1);
-    box-shadow: unset;
-}
-
     .section-preview{
         height: 400px;
     }
@@ -1567,12 +1587,24 @@ div.sharedaddy h3.sd-title {
         display: none;
     }
 
+    .section-top{
+        padding-bottom: 0px;
+    }
+
     .section-top .img-top{
         height: 300px;
     }
 
     .section-top .top-title {
         font-size: 1.25rem;
+    }
+
+    .single-post .img-featured-post {
+        max-height: 300px;
+    }
+
+    .single-post .title-post {
+        font-size: 22px;
     }
 }
 
@@ -1621,18 +1653,36 @@ div.sharedaddy h3.sd-title {
 
 @media screen and (max-width: 575.98px){
 
+    .img-brand{
+        width: 80px;
+    }
+
+    .navbar-toggler-icon{
+        width: 1.4em;
+    }
+
     .search-icon:hover ~ .input-search,
-    .input-search:hover{
-        width: 200px;
+    .input-search:hover,
+    .search-icon:focus ~ .input-search,
+    .input-search:focus{
+        width: 210px;
+    }
+
+    .search-box .input-search::placeholder{
+        font-size: 14px;
+    }
+
+    .section-preview .ribbon-top,
+    .section-preview .preview-right-bottom .ribbon-top{
+        left: 20px;
     }
 
     .section-preview .preview-right-bottom .ribbon-top{
         top: 20px;
-        left: 35px;
     }
 
     .section-preview .ribbon-top span{
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .section-lifestyle .first-item .card-title{
@@ -1679,13 +1729,53 @@ div.sharedaddy h3.sd-title {
         height: 150px;
     }
 
+    .single-post .img-featured-post {
+        max-height: 200px;
+    }
+
+    .related-body .related-category {
+        font-size: 14px;
+    }
+
+    .related-body .related-title-link .card-title {
+        font-size: 1.025rem;
+    }
+
+    .single-content h1{
+        font-size: 1.5em;
+    }
+    
+    .single-content h2{
+        font-size: 1.25em;
+    }
+
+    .single-content h3{
+        font-size: 1em;
+    }
+
+    .single-content p{
+        font-size: 0.875rem;
+    }
+
+    .post-tag-box .post-tag-label{
+        font-size: 0.825rem;
+    }
+
+    .post-tag-list-wrapper .post-tag-list{
+        padding: 2px 10px;
+        font-size: 0.625rem;
+        margin: 0px 5px 5px 0px;
+    }
+
 }
 
 
 @media screen and (max-width: 395.98px){
 
     .search-icon:hover ~ .input-search,
-    .input-search:hover{
+    .input-search:hover,
+    .search-icon:focus ~ .input-search,
+    .input-search:focus{
         width: 134px;
     }
 
