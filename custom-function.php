@@ -237,6 +237,43 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+// add preload css
+function preload_css( $html, $handle ){
+    if (strcmp($handle, 'fontawesome-css') == 0) {
+		$html = str_replace("rel='stylesheet'", 'rel="preload" onload="this.rel=\'stylesheet\'" as="style"', $html);
+    }
+	if (strcmp($handle, 'bootstrap-4-css') == 0) {
+		$html = str_replace("rel='stylesheet'", 'rel="preload" onload="this.rel=\'stylesheet\'" as="style"', $html);
+    }
+	if (strcmp($handle, 'default-style') == 0) {
+		$html = str_replace("rel='stylesheet'", 'rel="preload" onload="this.rel=\'stylesheet\'" as="style"', $html);
+    }
+	if (strcmp($handle, 'cubehype-style') == 0) {
+		$html = str_replace("rel='stylesheet'", 'rel="preload" onload="this.rel=\'stylesheet\'" as="style"', $html);
+    }
+
+    return $html;
+}
+add_filter( 'style_loader_tag',  'preload_css', 10, 2 );
+
+// add defer js
+function defer_js( $html, $handle, $src ){
+   	if ($handle === 'cubehype-script_file') {
+	
+		if (false === stripos($html, 'defer')) {
+			$html = str_replace('<script ', '<script defer ', $html);
+		}
+	}
+	if ($handle === 'bootstrap-4-js') {
+	
+		if (false === stripos($html, 'defer')) {
+			$html = str_replace('<script ', '<script defer ', $html);
+		}
+	}
+	return $html;
+}
+add_filter( 'script_loader_tag',  'defer_js', 10, 3 );
+
 
 
 ?>
