@@ -149,7 +149,7 @@ function cubehype_scripts() {
 	wp_enqueue_script( 'cubehype-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-4-js','https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js', array('jquery'), '4.6.0', true);
 	wp_enqueue_script( 'cubehype-script_file', get_template_directory_uri(). '/assets/js/script.min.js', array('jquery'), '1.0.2', true);
-	wp_localize_script( 'cubehype-script', 'script_object', array(
+	wp_localize_script( 'cubehype-script_file', 'script_object', array(
 
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
