@@ -32,8 +32,8 @@
 					<div class="footer-right">
 						<div class="contact-list">
 							<div class="contact-us">CONTACT US</div>
-							<a href="mailto:contact_cubehype@gmail.com" class="contact-mail">
-								Contact_cubehype@gmail.com
+							<a href="mailto:contact@cubehype.com" class="contact-mail">
+								contact@cubehype.com
 							</a>
 							<div class="contact-social-icon">
 								<a href="https://facebook.com/cubehype/" target="_blank" class="social-icon">
